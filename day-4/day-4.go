@@ -49,7 +49,7 @@ func GameResultWithDuplicates(input string) int {
 
 	results := make(map[int]int)
 
-	for i, _ := range lines {
+	for i := range lines {
 		results[i+1] = 1
 	}
 

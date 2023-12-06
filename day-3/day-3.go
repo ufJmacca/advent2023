@@ -73,7 +73,7 @@ func EngineSchematic(input string) int {
 
 	sumSchematics := 0
 
-	for key, _ := range adjacentNumbers {
+	for key := range adjacentNumbers {
 		intAdjacent, _ := strconv.Atoi(strings.Join(matrix[key.Row][key.ColStart:key.ColEnd], ""))
 		sumSchematics += intAdjacent
 	}
@@ -141,7 +141,7 @@ func GearSchematic(input string) int {
 		if len(uniqueMatrixMatches) == 2 {
 			result := 1
 
-			for location, _ := range uniqueMatrixMatches {
+			for location := range uniqueMatrixMatches {
 				intAdjacent, _ := strconv.Atoi(strings.Join(matrix[location.Row][location.ColStart:location.ColEnd], ""))
 				result *= intAdjacent
 			}
