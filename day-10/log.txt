@@ -1,0 +1,7436 @@
+=== RUN   TestPuzzle1
+    day-10_test.go:43: Puzzle1(.....
+        .S-7.
+        .|.|.
+        .L-J.
+        .....) PASSED
+    day-10_test.go:43: Puzzle1(..F7.
+        .FJ|.
+        SJ.L7
+        |F--J
+        LJ...) PASSED
+--- PASS: TestPuzzle1 (0.00s)
+=== RUN   TestFindStart
+    day-10_test.go:72: FindStart([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]]) PASSED
+    day-10_test.go:72: FindStart([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]]) PASSED
+--- PASS: TestFindStart (0.00s)
+=== RUN   TestFindConnectedTiles
+    day-10_test.go:101: FindConnectedTiles([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]], {1 1}) PASSED
+    day-10_test.go:101: FindConnectedTiles([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]], {2 0}) PASSED
+--- PASS: TestFindConnectedTiles (0.00s)
+=== RUN   TestPuzzle2
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+L or F
+-
+-
+-
+-
+-
+-
+-
+7 or J
+cell (1, 9) is inside
+.
+cell (1, 10) is inside
+row 2
+.
+|
+cell (2, 1) is inside
+L or F
+cell (2, 2) is inside
+-
+-
+-
+-
+-
+7 or J
+|
+cell (2, 9) is inside
+.
+cell (2, 10) is inside
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (3, 8) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (4, 8) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L or F
+cell (5, 2) is inside
+-
+7 or J
+cell (5, 4) is inside
+.
+cell (5, 5) is inside
+L or F
+cell (5, 6) is inside
+-
+7 or J
+cell (5, 8) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+.
+|
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+.
+cell (6, 8) is inside
+|
+.
+row 7
+.
+L or F
+-
+-
+7 or J
+cell (7, 4) is inside
+.
+cell (7, 5) is inside
+L or F
+cell (7, 6) is inside
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+25
+    day-10_test.go:152: Puzzle2(...........
+        .S-------7.
+        .|F-----7|.
+        .||.....||.
+        .||.....||.
+        .|L-7.F-J|.
+        .|..|.|..|.
+        .L--J.L--J.
+        ...........) FAILED - Expected 4 Got 0
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+L or F
+-
+-
+-
+-
+-
+-
+7 or J
+cell (1, 8) is inside
+.
+cell (1, 9) is inside
+row 2
+.
+|
+cell (2, 1) is inside
+L or F
+cell (2, 2) is inside
+-
+-
+-
+-
+7 or J
+|
+cell (2, 8) is inside
+.
+cell (2, 9) is inside
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (3, 7) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (4, 7) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L or F
+cell (5, 2) is inside
+-
+7 or J
+cell (5, 4) is inside
+L or F
+cell (5, 5) is inside
+-
+7 or J
+cell (5, 7) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+|
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+|
+.
+row 7
+.
+L or F
+-
+-
+7 or J
+cell (7, 4) is inside
+L or F
+cell (7, 5) is inside
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+23
+    day-10_test.go:152: Puzzle2(..........
+        .S------7.
+        .|F----7|.
+        .||OOOO||.
+        .||OOOO||.
+        .|L-7F-J|.
+        .|II||II|.
+        .L--JL--J.
+        ..........) FAILED - Expected 4 Got 0
+row 0
+.
+L or F
+-
+-
+-
+-
+7 or J
+cell (0, 6) is inside
+L or F
+cell (0, 7) is inside
+7 or J
+L or F
+7 or J
+cell (0, 10) is inside
+L or F
+cell (0, 11) is inside
+7 or J
+L or F
+-
+7 or J
+cell (0, 15) is inside
+.
+cell (0, 16) is inside
+.
+cell (0, 17) is inside
+.
+cell (0, 18) is inside
+.
+cell (0, 19) is inside
+row 1
+.
+|
+cell (1, 1) is inside
+L or F
+cell (1, 2) is inside
+-
+-
+7 or J
+|
+cell (1, 6) is inside
+|
+|
+cell (1, 8) is inside
+|
+|
+cell (1, 10) is inside
+|
+|
+cell (1, 12) is inside
+|
+L or F
+7 or J
+.
+.
+.
+.
+row 2
+.
+|
+cell (2, 1) is inside
+|
+.
+L or F
+7 or J
+|
+cell (2, 6) is inside
+|
+|
+cell (2, 8) is inside
+|
+|
+cell (2, 10) is inside
+|
+|
+cell (2, 12) is inside
+|
+L or F
+7 or J
+.
+.
+.
+.
+row 3
+L or F
+7 or J
+L or F
+7 or J
+L or F
+7 or J
+L or F
+7 or J
+cell (3, 7) is inside
+L or F
+cell (3, 8) is inside
+7 or J
+|
+cell (3, 10) is inside
+|
+L or F
+7 or J
+cell (3, 13) is inside
+.
+cell (3, 14) is inside
+L or F
+cell (3, 15) is inside
+-
+7 or J
+cell (3, 17) is inside
+.
+cell (3, 18) is inside
+.
+cell (3, 19) is inside
+row 4
+L or F
+-
+-
+7 or J
+cell (4, 3) is inside
+.
+cell (4, 4) is inside
+L or F
+cell (4, 5) is inside
+7 or J
+cell (4, 6) is inside
+.
+cell (4, 7) is inside
+.
+cell (4, 8) is inside
+.
+cell (4, 9) is inside
+L or F
+cell (4, 10) is inside
+7 or J
+L or F
+7 or J
+cell (4, 13) is inside
+L or F
+cell (4, 14) is inside
+-
+7 or J
+L or F
+7 or J
+.
+row 5
+.
+.
+.
+.
+L or F
+-
+7 or J
+.
+.
+L or F
+7 or J
+cell (5, 10) is inside
+L or F
+cell (5, 11) is inside
+7 or J
+cell (5, 12) is inside
+|
+L or F
+7 or J
+L or F
+7 or J
+L or F
+7 or J
+row 6
+.
+.
+.
+.
+L or F
+7 or J
+.
+L or F
+7 or J
+cell (6, 8) is inside
+|
+|
+cell (6, 10) is inside
+L or F
+cell (6, 11) is inside
+7 or J
+cell (6, 12) is inside
+|
+.
+L or F
+7 or J
+L or F
+7 or J
+|
+cell (6, 19) is inside
+row 7
+.
+.
+.
+.
+.
+|
+cell (7, 5) is inside
+L or F
+cell (7, 6) is inside
+7 or J
+cell (7, 7) is inside
+L or F
+cell (7, 8) is inside
+7 or J
+|
+cell (7, 10) is inside
+L or F
+cell (7, 11) is inside
+7 or J
+cell (7, 12) is inside
+|
+L or F
+7 or J
+cell (7, 15) is inside
+|
+.
+L or F
+7 or J
+cell (7, 19) is inside
+row 8
+.
+.
+.
+.
+L or F
+7 or J
+L or F
+-
+7 or J
+.
+|
+cell (8, 10) is inside
+|
+.
+|
+cell (8, 13) is inside
+|
+|
+cell (8, 15) is inside
+|
+.
+.
+.
+row 9
+.
+.
+.
+.
+L or F
+-
+-
+-
+7 or J
+cell (9, 8) is inside
+.
+cell (9, 9) is inside
+L or F
+cell (9, 10) is inside
+7 or J
+.
+L or F
+7 or J
+cell (9, 14) is inside
+L or F
+cell (9, 15) is inside
+7 or J
+.
+.
+.
+64
+    day-10_test.go:152: Puzzle2(.F----7F7F7F7F-7....
+        .|F--7||||||||FJ....
+        .||.FJ||||||||L7....
+        FJL7L7LJLJ||LJ.L-7..
+        L--J.L7...LJS7F-7L7.
+        ....F-J..F7FJ|L7L7L7
+        ....L7.F7||L7|.L7L7|
+        .....|FJLJ|FJ|F7|.LJ
+        ....FJL-7.||.||||...
+        ....L---J.LJ.LJLJ...) FAILED - Expected 8 Got 0
+row 0
+L or F
+L or F
+7 or J
+cell (0, 2) is inside
+L or F
+cell (0, 3) is inside
+7 or J
+L or F
+7 or J
+cell (0, 6) is inside
+L or F
+cell (0, 7) is inside
+7 or J
+L or F
+7 or J
+cell (0, 10) is inside
+L or F
+cell (0, 11) is inside
+7 or J
+L or F
+7 or J
+cell (0, 14) is inside
+L or F
+cell (0, 15) is inside
+-
+-
+-
+7 or J
+row 1
+L or F
+|
+cell (1, 1) is inside
+L or F
+cell (1, 2) is inside
+7 or J
+|
+cell (1, 4) is inside
+|
+|
+cell (1, 6) is inside
+|
+|
+cell (1, 8) is inside
+|
+|
+cell (1, 10) is inside
+|
+|
+cell (1, 12) is inside
+|
+|
+cell (1, 14) is inside
+|
+L or F
+-
+-
+7 or J
+row 2
+L or F
+L or F
+-
+7 or J
+L or F
+7 or J
+cell (2, 5) is inside
+L or F
+cell (2, 6) is inside
+7 or J
+|
+cell (2, 8) is inside
+|
+|
+cell (2, 10) is inside
+|
+|
+cell (2, 12) is inside
+|
+L or F
+7 or J
+cell (2, 15) is inside
+L or F
+cell (2, 16) is inside
+-
+7 or J
+cell (2, 18) is inside
+7 or J
+row 3
+L or F
+-
+-
+7 or J
+L or F
+-
+-
+7 or J
+cell (3, 7) is inside
+|
+|
+cell (3, 9) is inside
+L or F
+cell (3, 10) is inside
+7 or J
+L or F
+7 or J
+cell (3, 13) is inside
+7 or J
+L or F
+7 or J
+cell (3, 16) is inside
+L or F
+cell (3, 17) is inside
+7 or J
+cell (3, 18) is inside
+-
+row 4
+L or F
+-
+-
+-
+7 or J
+cell (4, 4) is inside
+L or F
+cell (4, 5) is inside
+-
+7 or J
+cell (4, 7) is inside
+L or F
+cell (4, 8) is inside
+7 or J
+.
+|
+cell (4, 11) is inside
+|
+-
+L or F
+7 or J
+L or F
+7 or J
+cell (4, 17) is inside
+7 or J
+cell (4, 18) is inside
+7 or J
+row 5
+|
+cell (5, 0) is inside
+L or F
+cell (5, 1) is inside
+|
+L or F
+-
+7 or J
+L or F
+-
+-
+-
+7 or J
+cell (5, 10) is inside
+L or F
+cell (5, 11) is inside
+7 or J
+-
+L or F
+7 or J
+L or F
+|
+cell (5, 17) is inside
+7 or J
+cell (5, 18) is inside
+|
+row 6
+|
+cell (6, 0) is inside
+L or F
+cell (6, 1) is inside
+L or F
+cell (6, 2) is inside
+7 or J
+cell (6, 3) is inside
+L or F
+cell (6, 4) is inside
+7 or J
+L or F
+7 or J
+L or F
+-
+7 or J
+L or F
+7 or J
+cell (6, 12) is inside
+|
+7 or J
+L or F
+-
+-
+-
+7 or J
+row 7
+.
+-
+L or F
+-
+7 or J
+cell (7, 4) is inside
+L or F
+cell (7, 5) is inside
+7 or J
+cell (7, 6) is inside
+|
+|
+cell (7, 8) is inside
+L or F
+cell (7, 9) is inside
+7 or J
+|
+cell (7, 11) is inside
+L or F
+cell (7, 12) is inside
+7 or J
+cell (7, 13) is inside
+L or F
+cell (7, 14) is inside
+-
+7 or J
+L or F
+7 or J
+cell (7, 18) is inside
+|
+row 8
+.
+.
+L or F
+7 or J
+L or F
+L or F
+7 or J
+|
+cell (8, 7) is inside
+|
+|
+cell (8, 9) is inside
+|
+|
+cell (8, 11) is inside
+L or F
+cell (8, 12) is inside
+7 or J
+cell (8, 13) is inside
+L or F
+cell (8, 14) is inside
+7 or J
+cell (8, 15) is inside
+|
+|
+cell (8, 17) is inside
+L or F
+cell (8, 18) is inside
+7 or J
+row 9
+.
+.
+7 or J
+L or F
+7 or J
+cell (9, 4) is inside
+L or F
+cell (9, 5) is inside
+-
+7 or J
+L or F
+7 or J
+cell (9, 9) is inside
+L or F
+cell (9, 10) is inside
+7 or J
+L or F
+-
+-
+7 or J
+cell (9, 15) is inside
+L or F
+cell (9, 16) is inside
+7 or J
+.
+L or F
+75
+    day-10_test.go:152: Puzzle2(FF7FSF7F7F7F7F7F---7
+        L|LJ||||||||||||F--J
+        FL-7LJLJ||||||LJL-77
+        F--JF--7||LJLJ7F7FJ-
+        L---JF-JLJ.||-FJLJJ7
+        |F|F-JF---7F7-L7L|7|
+        |FFJF7L7F-JF7|JL---7
+        7-L-JL7||F7|L7F-7F7|
+        L.L7LFJ|||||FJL7||LJ
+        L7JLJL-JLJLJL--JLJ.L) FAILED - Expected 10 Got 0
+--- FAIL: TestPuzzle2 (0.00s)
+FAIL
+exit status 1
+FAIL	github.com/ufJmacca/advent2023/day-10	0.004s
+=== RUN   TestPuzzle1
+    day-10_test.go:43: Puzzle1(.....
+        .S-7.
+        .|.|.
+        .L-J.
+        .....) PASSED
+    day-10_test.go:43: Puzzle1(..F7.
+        .FJ|.
+        SJ.L7
+        |F--J
+        LJ...) PASSED
+--- PASS: TestPuzzle1 (0.00s)
+=== RUN   TestFindStart
+    day-10_test.go:72: FindStart([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]]) PASSED
+    day-10_test.go:72: FindStart([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]]) PASSED
+--- PASS: TestFindStart (0.00s)
+=== RUN   TestFindConnectedTiles
+    day-10_test.go:101: FindConnectedTiles([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]], {1 1}) PASSED
+    day-10_test.go:101: FindConnectedTiles([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]], {2 0}) PASSED
+--- PASS: TestFindConnectedTiles (0.00s)
+=== RUN   TestPuzzle2
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+L or F
+-
+-
+-
+-
+-
+-
+-
+7 or J
+cell (1, 9) is inside
+.
+cell (1, 10) is inside
+row 2
+.
+|
+cell (2, 1) is inside
+L or F
+cell (2, 2) is inside
+-
+-
+-
+-
+-
+7 or J
+|
+cell (2, 9) is inside
+.
+cell (2, 10) is inside
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (3, 8) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (4, 8) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L or F
+cell (5, 2) is inside
+-
+7 or J
+cell (5, 4) is inside
+.
+cell (5, 5) is inside
+L or F
+cell (5, 6) is inside
+-
+7 or J
+cell (5, 8) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+.
+|
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+.
+cell (6, 8) is inside
+|
+.
+row 7
+.
+L or F
+-
+-
+7 or J
+cell (7, 4) is inside
+.
+cell (7, 5) is inside
+L or F
+cell (7, 6) is inside
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+25
+    day-10_test.go:152: Puzzle2(...........
+        .S-------7.
+        .|F-----7|.
+        .||.....||.
+        .||.....||.
+        .|L-7.F-J|.
+        .|..|.|..|.
+        .L--J.L--J.
+        ...........) FAILED - Expected 4 Got 0
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+L or F
+-
+-
+-
+-
+-
+-
+7 or J
+cell (1, 8) is inside
+.
+cell (1, 9) is inside
+row 2
+.
+|
+cell (2, 1) is inside
+L or F
+cell (2, 2) is inside
+-
+-
+-
+-
+7 or J
+|
+cell (2, 8) is inside
+.
+cell (2, 9) is inside
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (3, 7) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (4, 7) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L or F
+cell (5, 2) is inside
+-
+7 or J
+cell (5, 4) is inside
+L or F
+cell (5, 5) is inside
+-
+7 or J
+cell (5, 7) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+|
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+|
+.
+row 7
+.
+L or F
+-
+-
+7 or J
+cell (7, 4) is inside
+L or F
+cell (7, 5) is inside
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+23
+    day-10_test.go:152: Puzzle2(..........
+        .S------7.
+        .|F----7|.
+        .||OOOO||.
+        .||OOOO||.
+        .|L-7F-J|.
+        .|II||II|.
+        .L--JL--J.
+        ..........) FAILED - Expected 4 Got 0
+row 0
+.
+L or F
+-
+-
+-
+-
+7 or J
+cell (0, 6) is inside
+L or F
+cell (0, 7) is inside
+7 or J
+L or F
+7 or J
+cell (0, 10) is inside
+L or F
+cell (0, 11) is inside
+7 or J
+L or F
+-
+7 or J
+cell (0, 15) is inside
+.
+cell (0, 16) is inside
+.
+cell (0, 17) is inside
+.
+cell (0, 18) is inside
+.
+cell (0, 19) is inside
+row 1
+.
+|
+cell (1, 1) is inside
+L or F
+cell (1, 2) is inside
+-
+-
+7 or J
+|
+cell (1, 6) is inside
+|
+|
+cell (1, 8) is inside
+|
+|
+cell (1, 10) is inside
+|
+|
+cell (1, 12) is inside
+|
+L or F
+7 or J
+.
+.
+.
+.
+row 2
+.
+|
+cell (2, 1) is inside
+|
+.
+L or F
+7 or J
+|
+cell (2, 6) is inside
+|
+|
+cell (2, 8) is inside
+|
+|
+cell (2, 10) is inside
+|
+|
+cell (2, 12) is inside
+|
+L or F
+7 or J
+.
+.
+.
+.
+row 3
+L or F
+7 or J
+L or F
+7 or J
+L or F
+7 or J
+L or F
+7 or J
+cell (3, 7) is inside
+L or F
+cell (3, 8) is inside
+7 or J
+|
+cell (3, 10) is inside
+|
+L or F
+7 or J
+cell (3, 13) is inside
+.
+cell (3, 14) is inside
+L or F
+cell (3, 15) is inside
+-
+7 or J
+cell (3, 17) is inside
+.
+cell (3, 18) is inside
+.
+cell (3, 19) is inside
+row 4
+L or F
+-
+-
+7 or J
+cell (4, 3) is inside
+.
+cell (4, 4) is inside
+L or F
+cell (4, 5) is inside
+7 or J
+cell (4, 6) is inside
+.
+cell (4, 7) is inside
+.
+cell (4, 8) is inside
+.
+cell (4, 9) is inside
+L or F
+cell (4, 10) is inside
+7 or J
+L or F
+7 or J
+cell (4, 13) is inside
+L or F
+cell (4, 14) is inside
+-
+7 or J
+L or F
+7 or J
+.
+row 5
+.
+.
+.
+.
+L or F
+-
+7 or J
+.
+.
+L or F
+7 or J
+cell (5, 10) is inside
+L or F
+cell (5, 11) is inside
+7 or J
+cell (5, 12) is inside
+|
+L or F
+7 or J
+L or F
+7 or J
+L or F
+7 or J
+row 6
+.
+.
+.
+.
+L or F
+7 or J
+.
+L or F
+7 or J
+cell (6, 8) is inside
+|
+|
+cell (6, 10) is inside
+L or F
+cell (6, 11) is inside
+7 or J
+cell (6, 12) is inside
+|
+.
+L or F
+7 or J
+L or F
+7 or J
+|
+cell (6, 19) is inside
+row 7
+.
+.
+.
+.
+.
+|
+cell (7, 5) is inside
+L or F
+cell (7, 6) is inside
+7 or J
+cell (7, 7) is inside
+L or F
+cell (7, 8) is inside
+7 or J
+|
+cell (7, 10) is inside
+L or F
+cell (7, 11) is inside
+7 or J
+cell (7, 12) is inside
+|
+L or F
+7 or J
+cell (7, 15) is inside
+|
+.
+L or F
+7 or J
+cell (7, 19) is inside
+row 8
+.
+.
+.
+.
+L or F
+7 or J
+L or F
+-
+7 or J
+.
+|
+cell (8, 10) is inside
+|
+.
+|
+cell (8, 13) is inside
+|
+|
+cell (8, 15) is inside
+|
+.
+.
+.
+row 9
+.
+.
+.
+.
+L or F
+-
+-
+-
+7 or J
+cell (9, 8) is inside
+.
+cell (9, 9) is inside
+L or F
+cell (9, 10) is inside
+7 or J
+.
+L or F
+7 or J
+cell (9, 14) is inside
+L or F
+cell (9, 15) is inside
+7 or J
+.
+.
+.
+64
+    day-10_test.go:152: Puzzle2(.F----7F7F7F7F-7....
+        .|F--7||||||||FJ....
+        .||.FJ||||||||L7....
+        FJL7L7LJLJ||LJ.L-7..
+        L--J.L7...LJS7F-7L7.
+        ....F-J..F7FJ|L7L7L7
+        ....L7.F7||L7|.L7L7|
+        .....|FJLJ|FJ|F7|.LJ
+        ....FJL-7.||.||||...
+        ....L---J.LJ.LJLJ...) FAILED - Expected 8 Got 0
+row 0
+L or F
+L or F
+7 or J
+cell (0, 2) is inside
+L or F
+cell (0, 3) is inside
+7 or J
+L or F
+7 or J
+cell (0, 6) is inside
+L or F
+cell (0, 7) is inside
+7 or J
+L or F
+7 or J
+cell (0, 10) is inside
+L or F
+cell (0, 11) is inside
+7 or J
+L or F
+7 or J
+cell (0, 14) is inside
+L or F
+cell (0, 15) is inside
+-
+-
+-
+7 or J
+row 1
+L or F
+|
+cell (1, 1) is inside
+L or F
+cell (1, 2) is inside
+7 or J
+|
+cell (1, 4) is inside
+|
+|
+cell (1, 6) is inside
+|
+|
+cell (1, 8) is inside
+|
+|
+cell (1, 10) is inside
+|
+|
+cell (1, 12) is inside
+|
+|
+cell (1, 14) is inside
+|
+L or F
+-
+-
+7 or J
+row 2
+L or F
+L or F
+-
+7 or J
+L or F
+7 or J
+cell (2, 5) is inside
+L or F
+cell (2, 6) is inside
+7 or J
+|
+cell (2, 8) is inside
+|
+|
+cell (2, 10) is inside
+|
+|
+cell (2, 12) is inside
+|
+L or F
+7 or J
+cell (2, 15) is inside
+L or F
+cell (2, 16) is inside
+-
+7 or J
+cell (2, 18) is inside
+7 or J
+row 3
+L or F
+-
+-
+7 or J
+L or F
+-
+-
+7 or J
+cell (3, 7) is inside
+|
+|
+cell (3, 9) is inside
+L or F
+cell (3, 10) is inside
+7 or J
+L or F
+7 or J
+cell (3, 13) is inside
+7 or J
+L or F
+7 or J
+cell (3, 16) is inside
+L or F
+cell (3, 17) is inside
+7 or J
+cell (3, 18) is inside
+-
+row 4
+L or F
+-
+-
+-
+7 or J
+cell (4, 4) is inside
+L or F
+cell (4, 5) is inside
+-
+7 or J
+cell (4, 7) is inside
+L or F
+cell (4, 8) is inside
+7 or J
+.
+|
+cell (4, 11) is inside
+|
+-
+L or F
+7 or J
+L or F
+7 or J
+cell (4, 17) is inside
+7 or J
+cell (4, 18) is inside
+7 or J
+row 5
+|
+cell (5, 0) is inside
+L or F
+cell (5, 1) is inside
+|
+L or F
+-
+7 or J
+L or F
+-
+-
+-
+7 or J
+cell (5, 10) is inside
+L or F
+cell (5, 11) is inside
+7 or J
+-
+L or F
+7 or J
+L or F
+|
+cell (5, 17) is inside
+7 or J
+cell (5, 18) is inside
+|
+row 6
+|
+cell (6, 0) is inside
+L or F
+cell (6, 1) is inside
+L or F
+cell (6, 2) is inside
+7 or J
+cell (6, 3) is inside
+L or F
+cell (6, 4) is inside
+7 or J
+L or F
+7 or J
+L or F
+-
+7 or J
+L or F
+7 or J
+cell (6, 12) is inside
+|
+7 or J
+L or F
+-
+-
+-
+7 or J
+row 7
+.
+-
+L or F
+-
+7 or J
+cell (7, 4) is inside
+L or F
+cell (7, 5) is inside
+7 or J
+cell (7, 6) is inside
+|
+|
+cell (7, 8) is inside
+L or F
+cell (7, 9) is inside
+7 or J
+|
+cell (7, 11) is inside
+L or F
+cell (7, 12) is inside
+7 or J
+cell (7, 13) is inside
+L or F
+cell (7, 14) is inside
+-
+7 or J
+L or F
+7 or J
+cell (7, 18) is inside
+|
+row 8
+.
+.
+L or F
+7 or J
+L or F
+L or F
+7 or J
+|
+cell (8, 7) is inside
+|
+|
+cell (8, 9) is inside
+|
+|
+cell (8, 11) is inside
+L or F
+cell (8, 12) is inside
+7 or J
+cell (8, 13) is inside
+L or F
+cell (8, 14) is inside
+7 or J
+cell (8, 15) is inside
+|
+|
+cell (8, 17) is inside
+L or F
+cell (8, 18) is inside
+7 or J
+row 9
+.
+.
+7 or J
+L or F
+7 or J
+cell (9, 4) is inside
+L or F
+cell (9, 5) is inside
+-
+7 or J
+L or F
+7 or J
+cell (9, 9) is inside
+L or F
+cell (9, 10) is inside
+7 or J
+L or F
+-
+-
+7 or J
+cell (9, 15) is inside
+L or F
+cell (9, 16) is inside
+7 or J
+.
+L or F
+75
+    day-10_test.go:152: Puzzle2(FF7FSF7F7F7F7F7F---7
+        L|LJ||||||||||||F--J
+        FL-7LJLJ||||||LJL-77
+        F--JF--7||LJLJ7F7FJ-
+        L---JF-JLJ.||-FJLJJ7
+        |F|F-JF---7F7-L7L|7|
+        |FFJF7L7F-JF7|JL---7
+        7-L-JL7||F7|L7F-7F7|
+        L.L7LFJ|||||FJL7||LJ
+        L7JLJL-JLJLJL--JLJ.L) FAILED - Expected 10 Got 0
+--- FAIL: TestPuzzle2 (0.00s)
+FAIL
+exit status 1
+FAIL	github.com/ufJmacca/advent2023/day-10	0.004s
+=== RUN   TestPuzzle1
+    day-10_test.go:43: Puzzle1(.....
+        .S-7.
+        .|.|.
+        .L-J.
+        .....) PASSED
+    day-10_test.go:43: Puzzle1(..F7.
+        .FJ|.
+        SJ.L7
+        |F--J
+        LJ...) PASSED
+--- PASS: TestPuzzle1 (0.00s)
+=== RUN   TestFindStart
+    day-10_test.go:72: FindStart([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]]) PASSED
+    day-10_test.go:72: FindStart([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]]) PASSED
+--- PASS: TestFindStart (0.00s)
+=== RUN   TestFindConnectedTiles
+    day-10_test.go:101: FindConnectedTiles([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]], {1 1}) PASSED
+    day-10_test.go:101: FindConnectedTiles([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]], {2 0}) PASSED
+--- PASS: TestFindConnectedTiles (0.00s)
+=== RUN   TestPuzzle2
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+-
+7 or J
+cell (1, 9) is inside
+.
+cell (1, 10) is inside
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+-
+-
+-
+-
+7 or J
+|
+cell (2, 9) is inside
+.
+cell (2, 10) is inside
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (3, 8) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (4, 8) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+7 or J
+cell (5, 4) is inside
+.
+cell (5, 5) is inside
+F direction false
+cell (5, 6) is inside
+-
+7 or J
+cell (5, 8) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+.
+|
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+.
+cell (6, 8) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+cell (7, 4) is inside
+.
+cell (7, 5) is inside
+L direction true
+cell (7, 6) is inside
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+25
+    day-10_test.go:152: Puzzle2(...........
+        .S-------7.
+        .|F-----7|.
+        .||.....||.
+        .||.....||.
+        .|L-7.F-J|.
+        .|..|.|..|.
+        .L--J.L--J.
+        ...........) FAILED - Expected 4 Got 0
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+7 or J
+cell (1, 8) is inside
+.
+cell (1, 9) is inside
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+-
+-
+-
+7 or J
+|
+cell (2, 8) is inside
+.
+cell (2, 9) is inside
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (3, 7) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (4, 7) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+7 or J
+cell (5, 4) is inside
+F direction false
+cell (5, 5) is inside
+-
+7 or J
+cell (5, 7) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+|
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+cell (7, 4) is inside
+L direction true
+cell (7, 5) is inside
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+23
+    day-10_test.go:152: Puzzle2(..........
+        .S------7.
+        .|F----7|.
+        .||OOOO||.
+        .||OOOO||.
+        .|L-7F-J|.
+        .|II||II|.
+        .L--JL--J.
+        ..........) FAILED - Expected 4 Got 0
+row 0
+.
+F direction false
+-
+-
+-
+-
+7 or J
+cell (0, 6) is inside
+F direction false
+cell (0, 7) is inside
+7 or J
+F direction false
+7 or J
+cell (0, 10) is inside
+F direction false
+cell (0, 11) is inside
+7 or J
+F direction false
+-
+7 or J
+cell (0, 15) is inside
+.
+cell (0, 16) is inside
+.
+cell (0, 17) is inside
+.
+cell (0, 18) is inside
+.
+cell (0, 19) is inside
+row 1
+.
+|
+cell (1, 1) is inside
+F direction false
+cell (1, 2) is inside
+-
+-
+7 or J
+|
+cell (1, 6) is inside
+|
+|
+cell (1, 8) is inside
+|
+|
+cell (1, 10) is inside
+|
+|
+cell (1, 12) is inside
+|
+F direction false
+7 or J
+.
+.
+.
+.
+row 2
+.
+|
+cell (2, 1) is inside
+|
+.
+F direction false
+7 or J
+|
+cell (2, 6) is inside
+|
+|
+cell (2, 8) is inside
+|
+|
+cell (2, 10) is inside
+|
+|
+cell (2, 12) is inside
+|
+L direction true
+7 or J
+.
+.
+.
+.
+row 3
+F direction false
+7 or J
+L direction true
+7 or J
+L direction true
+7 or J
+L direction true
+7 or J
+cell (3, 7) is inside
+L direction true
+cell (3, 8) is inside
+7 or J
+|
+cell (3, 10) is inside
+|
+L direction true
+7 or J
+cell (3, 13) is inside
+.
+cell (3, 14) is inside
+L direction true
+cell (3, 15) is inside
+-
+7 or J
+cell (3, 17) is inside
+.
+cell (3, 18) is inside
+.
+cell (3, 19) is inside
+row 4
+L direction true
+-
+-
+7 or J
+cell (4, 3) is inside
+.
+cell (4, 4) is inside
+L direction true
+cell (4, 5) is inside
+7 or J
+cell (4, 6) is inside
+.
+cell (4, 7) is inside
+.
+cell (4, 8) is inside
+.
+cell (4, 9) is inside
+L direction true
+cell (4, 10) is inside
+7 or J
+F direction false
+7 or J
+cell (4, 13) is inside
+F direction false
+cell (4, 14) is inside
+-
+7 or J
+L direction true
+7 or J
+.
+row 5
+.
+.
+.
+.
+F direction false
+-
+7 or J
+.
+.
+F direction false
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+cell (5, 12) is inside
+|
+L direction true
+7 or J
+L direction true
+7 or J
+L direction true
+7 or J
+row 6
+.
+.
+.
+.
+L direction true
+7 or J
+.
+F direction false
+7 or J
+cell (6, 8) is inside
+|
+|
+cell (6, 10) is inside
+L direction true
+cell (6, 11) is inside
+7 or J
+cell (6, 12) is inside
+|
+.
+L direction true
+7 or J
+L direction true
+7 or J
+|
+cell (6, 19) is inside
+row 7
+.
+.
+.
+.
+.
+|
+cell (7, 5) is inside
+F direction false
+cell (7, 6) is inside
+7 or J
+cell (7, 7) is inside
+L direction true
+cell (7, 8) is inside
+7 or J
+|
+cell (7, 10) is inside
+F direction false
+cell (7, 11) is inside
+7 or J
+cell (7, 12) is inside
+|
+F direction false
+7 or J
+cell (7, 15) is inside
+|
+.
+L direction true
+7 or J
+cell (7, 19) is inside
+row 8
+.
+.
+.
+.
+F direction false
+7 or J
+L direction true
+-
+7 or J
+.
+|
+cell (8, 10) is inside
+|
+.
+|
+cell (8, 13) is inside
+|
+|
+cell (8, 15) is inside
+|
+.
+.
+.
+row 9
+.
+.
+.
+.
+L direction true
+-
+-
+-
+7 or J
+cell (9, 8) is inside
+.
+cell (9, 9) is inside
+L direction true
+cell (9, 10) is inside
+7 or J
+.
+L direction true
+7 or J
+cell (9, 14) is inside
+L direction true
+cell (9, 15) is inside
+7 or J
+.
+.
+.
+64
+    day-10_test.go:152: Puzzle2(.F----7F7F7F7F-7....
+        .|F--7||||||||FJ....
+        .||.FJ||||||||L7....
+        FJL7L7LJLJ||LJ.L-7..
+        L--J.L7...LJS7F-7L7.
+        ....F-J..F7FJ|L7L7L7
+        ....L7.F7||L7|.L7L7|
+        .....|FJLJ|FJ|F7|.LJ
+        ....FJL-7.||.||||...
+        ....L---J.LJ.LJLJ...) FAILED - Expected 8 Got 0
+row 0
+F direction false
+F direction false
+7 or J
+cell (0, 2) is inside
+F direction false
+cell (0, 3) is inside
+7 or J
+F direction false
+7 or J
+cell (0, 6) is inside
+F direction false
+cell (0, 7) is inside
+7 or J
+F direction false
+7 or J
+cell (0, 10) is inside
+F direction false
+cell (0, 11) is inside
+7 or J
+F direction false
+7 or J
+cell (0, 14) is inside
+F direction false
+cell (0, 15) is inside
+-
+-
+-
+7 or J
+row 1
+L direction true
+|
+cell (1, 1) is inside
+L direction true
+cell (1, 2) is inside
+7 or J
+|
+cell (1, 4) is inside
+|
+|
+cell (1, 6) is inside
+|
+|
+cell (1, 8) is inside
+|
+|
+cell (1, 10) is inside
+|
+|
+cell (1, 12) is inside
+|
+|
+cell (1, 14) is inside
+|
+F direction false
+-
+-
+7 or J
+row 2
+F direction false
+L direction true
+-
+7 or J
+L direction true
+7 or J
+cell (2, 5) is inside
+L direction true
+cell (2, 6) is inside
+7 or J
+|
+cell (2, 8) is inside
+|
+|
+cell (2, 10) is inside
+|
+|
+cell (2, 12) is inside
+|
+L direction true
+7 or J
+cell (2, 15) is inside
+L direction true
+cell (2, 16) is inside
+-
+7 or J
+cell (2, 18) is inside
+7 or J
+row 3
+F direction false
+-
+-
+7 or J
+F direction false
+-
+-
+7 or J
+cell (3, 7) is inside
+|
+|
+cell (3, 9) is inside
+L direction true
+cell (3, 10) is inside
+7 or J
+L direction true
+7 or J
+cell (3, 13) is inside
+7 or J
+F direction false
+7 or J
+cell (3, 16) is inside
+F direction false
+cell (3, 17) is inside
+7 or J
+cell (3, 18) is inside
+-
+row 4
+L direction true
+-
+-
+-
+7 or J
+cell (4, 4) is inside
+F direction false
+cell (4, 5) is inside
+-
+7 or J
+cell (4, 7) is inside
+L direction true
+cell (4, 8) is inside
+7 or J
+.
+|
+cell (4, 11) is inside
+|
+-
+F direction false
+7 or J
+L direction true
+7 or J
+cell (4, 17) is inside
+7 or J
+cell (4, 18) is inside
+7 or J
+row 5
+|
+cell (5, 0) is inside
+F direction false
+cell (5, 1) is inside
+|
+F direction false
+-
+7 or J
+F direction false
+-
+-
+-
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+-
+L direction true
+7 or J
+L direction true
+|
+cell (5, 17) is inside
+7 or J
+cell (5, 18) is inside
+|
+row 6
+|
+cell (6, 0) is inside
+F direction false
+cell (6, 1) is inside
+F direction false
+cell (6, 2) is inside
+7 or J
+cell (6, 3) is inside
+F direction false
+cell (6, 4) is inside
+7 or J
+L direction true
+7 or J
+F direction false
+-
+7 or J
+F direction false
+7 or J
+cell (6, 12) is inside
+|
+7 or J
+L direction true
+-
+-
+-
+7 or J
+row 7
+.
+-
+L direction true
+-
+7 or J
+cell (7, 4) is inside
+L direction true
+cell (7, 5) is inside
+7 or J
+cell (7, 6) is inside
+|
+|
+cell (7, 8) is inside
+F direction false
+cell (7, 9) is inside
+7 or J
+|
+cell (7, 11) is inside
+L direction true
+cell (7, 12) is inside
+7 or J
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+-
+7 or J
+F direction false
+7 or J
+cell (7, 18) is inside
+|
+row 8
+.
+.
+L direction true
+7 or J
+L direction true
+F direction false
+7 or J
+|
+cell (8, 7) is inside
+|
+|
+cell (8, 9) is inside
+|
+|
+cell (8, 11) is inside
+F direction false
+cell (8, 12) is inside
+7 or J
+cell (8, 13) is inside
+L direction true
+cell (8, 14) is inside
+7 or J
+cell (8, 15) is inside
+|
+|
+cell (8, 17) is inside
+L direction true
+cell (8, 18) is inside
+7 or J
+row 9
+.
+.
+7 or J
+L direction true
+7 or J
+cell (9, 4) is inside
+L direction true
+cell (9, 5) is inside
+-
+7 or J
+L direction true
+7 or J
+cell (9, 9) is inside
+L direction true
+cell (9, 10) is inside
+7 or J
+L direction true
+-
+-
+7 or J
+cell (9, 15) is inside
+L direction true
+cell (9, 16) is inside
+7 or J
+.
+L direction true
+75
+    day-10_test.go:152: Puzzle2(FF7FSF7F7F7F7F7F---7
+        L|LJ||||||||||||F--J
+        FL-7LJLJ||||||LJL-77
+        F--JF--7||LJLJ7F7FJ-
+        L---JF-JLJ.||-FJLJJ7
+        |F|F-JF---7F7-L7L|7|
+        |FFJF7L7F-JF7|JL---7
+        7-L-JL7||F7|L7F-7F7|
+        L.L7LFJ|||||FJL7||LJ
+        L7JLJL-JLJLJL--JLJ.L) FAILED - Expected 10 Got 0
+--- FAIL: TestPuzzle2 (0.00s)
+FAIL
+exit status 1
+FAIL	github.com/ufJmacca/advent2023/day-10	0.004s
+=== RUN   TestPuzzle1
+    day-10_test.go:43: Puzzle1(.....
+        .S-7.
+        .|.|.
+        .L-J.
+        .....) PASSED
+    day-10_test.go:43: Puzzle1(..F7.
+        .FJ|.
+        SJ.L7
+        |F--J
+        LJ...) PASSED
+--- PASS: TestPuzzle1 (0.00s)
+=== RUN   TestFindStart
+    day-10_test.go:72: FindStart([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]]) PASSED
+    day-10_test.go:72: FindStart([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]]) PASSED
+--- PASS: TestFindStart (0.00s)
+=== RUN   TestFindConnectedTiles
+    day-10_test.go:101: FindConnectedTiles([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]], {1 1}) PASSED
+    day-10_test.go:101: FindConnectedTiles([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]], {2 0}) PASSED
+--- PASS: TestFindConnectedTiles (0.00s)
+=== RUN   TestPuzzle2
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+-
+7 or J
+7 direction false
+cell (1, 9) is inside
+.
+cell (1, 10) is inside
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+-
+-
+-
+-
+7 or J
+7 direction false
+|
+cell (2, 9) is inside
+.
+cell (2, 10) is inside
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (3, 8) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (4, 8) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+7 or J
+cell (5, 4) is inside
+.
+cell (5, 5) is inside
+F direction false
+cell (5, 6) is inside
+-
+7 or J
+cell (5, 8) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+.
+|
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+.
+cell (6, 8) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+J direction true
+cell (7, 4) is inside
+.
+cell (7, 5) is inside
+L direction true
+cell (7, 6) is inside
+-
+-
+7 or J
+J direction true
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+25
+    day-10_test.go:152: Puzzle2(...........
+        .S-------7.
+        .|F-----7|.
+        .||.....||.
+        .||.....||.
+        .|L-7.F-J|.
+        .|..|.|..|.
+        .L--J.L--J.
+        ...........) FAILED - Expected 4 Got 0
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+7 or J
+7 direction false
+cell (1, 8) is inside
+.
+cell (1, 9) is inside
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+-
+-
+-
+7 or J
+7 direction false
+|
+cell (2, 8) is inside
+.
+cell (2, 9) is inside
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (3, 7) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (4, 7) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+7 or J
+cell (5, 4) is inside
+F direction false
+cell (5, 5) is inside
+-
+7 or J
+cell (5, 7) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+|
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+J direction true
+cell (7, 4) is inside
+L direction true
+cell (7, 5) is inside
+-
+-
+7 or J
+J direction true
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+23
+    day-10_test.go:152: Puzzle2(..........
+        .S------7.
+        .|F----7|.
+        .||OOOO||.
+        .||OOOO||.
+        .|L-7F-J|.
+        .|II||II|.
+        .L--JL--J.
+        ..........) FAILED - Expected 4 Got 0
+row 0
+.
+F direction false
+-
+-
+-
+-
+7 or J
+7 direction false
+cell (0, 6) is inside
+F direction false
+cell (0, 7) is inside
+7 or J
+7 direction false
+F direction false
+7 or J
+7 direction false
+cell (0, 10) is inside
+F direction false
+cell (0, 11) is inside
+7 or J
+7 direction false
+F direction false
+-
+7 or J
+7 direction false
+cell (0, 15) is inside
+.
+cell (0, 16) is inside
+.
+cell (0, 17) is inside
+.
+cell (0, 18) is inside
+.
+cell (0, 19) is inside
+row 1
+.
+|
+cell (1, 1) is inside
+F direction false
+cell (1, 2) is inside
+-
+-
+7 or J
+7 direction false
+|
+cell (1, 6) is inside
+|
+|
+cell (1, 8) is inside
+|
+|
+cell (1, 10) is inside
+|
+|
+cell (1, 12) is inside
+|
+F direction false
+7 or J
+.
+.
+.
+.
+row 2
+.
+|
+cell (2, 1) is inside
+|
+.
+F direction false
+7 or J
+|
+cell (2, 6) is inside
+|
+|
+cell (2, 8) is inside
+|
+|
+cell (2, 10) is inside
+|
+|
+cell (2, 12) is inside
+|
+L direction true
+7 or J
+.
+.
+.
+.
+row 3
+F direction false
+7 or J
+L direction true
+7 or J
+L direction true
+7 or J
+L direction true
+7 or J
+J direction true
+cell (3, 7) is inside
+L direction true
+cell (3, 8) is inside
+7 or J
+J direction true
+|
+cell (3, 10) is inside
+|
+L direction true
+7 or J
+J direction true
+cell (3, 13) is inside
+.
+cell (3, 14) is inside
+L direction true
+cell (3, 15) is inside
+-
+7 or J
+cell (3, 17) is inside
+.
+cell (3, 18) is inside
+.
+cell (3, 19) is inside
+row 4
+L direction true
+-
+-
+7 or J
+J direction true
+cell (4, 3) is inside
+.
+cell (4, 4) is inside
+L direction true
+cell (4, 5) is inside
+7 or J
+cell (4, 6) is inside
+.
+cell (4, 7) is inside
+.
+cell (4, 8) is inside
+.
+cell (4, 9) is inside
+L direction true
+cell (4, 10) is inside
+7 or J
+J direction true
+F direction false
+7 or J
+7 direction false
+cell (4, 13) is inside
+F direction false
+cell (4, 14) is inside
+-
+7 or J
+7 direction false
+L direction true
+7 or J
+.
+row 5
+.
+.
+.
+.
+F direction false
+-
+7 or J
+.
+.
+F direction false
+7 or J
+7 direction false
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+cell (5, 12) is inside
+|
+L direction true
+7 or J
+L direction true
+7 or J
+L direction true
+7 or J
+row 6
+.
+.
+.
+.
+L direction true
+7 or J
+.
+F direction false
+7 or J
+7 direction false
+cell (6, 8) is inside
+|
+|
+cell (6, 10) is inside
+L direction true
+cell (6, 11) is inside
+7 or J
+cell (6, 12) is inside
+|
+.
+L direction true
+7 or J
+L direction true
+7 or J
+|
+cell (6, 19) is inside
+row 7
+.
+.
+.
+.
+.
+|
+cell (7, 5) is inside
+F direction false
+cell (7, 6) is inside
+7 or J
+cell (7, 7) is inside
+L direction true
+cell (7, 8) is inside
+7 or J
+J direction true
+|
+cell (7, 10) is inside
+F direction false
+cell (7, 11) is inside
+7 or J
+cell (7, 12) is inside
+|
+F direction false
+7 or J
+7 direction false
+cell (7, 15) is inside
+|
+.
+L direction true
+7 or J
+J direction true
+cell (7, 19) is inside
+row 8
+.
+.
+.
+.
+F direction false
+7 or J
+L direction true
+-
+7 or J
+.
+|
+cell (8, 10) is inside
+|
+.
+|
+cell (8, 13) is inside
+|
+|
+cell (8, 15) is inside
+|
+.
+.
+.
+row 9
+.
+.
+.
+.
+L direction true
+-
+-
+-
+7 or J
+J direction true
+cell (9, 8) is inside
+.
+cell (9, 9) is inside
+L direction true
+cell (9, 10) is inside
+7 or J
+J direction true
+.
+L direction true
+7 or J
+J direction true
+cell (9, 14) is inside
+L direction true
+cell (9, 15) is inside
+7 or J
+J direction true
+.
+.
+.
+64
+    day-10_test.go:152: Puzzle2(.F----7F7F7F7F-7....
+        .|F--7||||||||FJ....
+        .||.FJ||||||||L7....
+        FJL7L7LJLJ||LJ.L-7..
+        L--J.L7...LJS7F-7L7.
+        ....F-J..F7FJ|L7L7L7
+        ....L7.F7||L7|.L7L7|
+        .....|FJLJ|FJ|F7|.LJ
+        ....FJL-7.||.||||...
+        ....L---J.LJ.LJLJ...) FAILED - Expected 8 Got 0
+row 0
+F direction false
+F direction false
+7 or J
+7 direction false
+cell (0, 2) is inside
+F direction false
+cell (0, 3) is inside
+7 or J
+7 direction false
+F direction false
+7 or J
+7 direction false
+cell (0, 6) is inside
+F direction false
+cell (0, 7) is inside
+7 or J
+7 direction false
+F direction false
+7 or J
+7 direction false
+cell (0, 10) is inside
+F direction false
+cell (0, 11) is inside
+7 or J
+7 direction false
+F direction false
+7 or J
+7 direction false
+cell (0, 14) is inside
+F direction false
+cell (0, 15) is inside
+-
+-
+-
+7 or J
+7 direction false
+row 1
+L direction true
+|
+cell (1, 1) is inside
+L direction true
+cell (1, 2) is inside
+7 or J
+J direction true
+|
+cell (1, 4) is inside
+|
+|
+cell (1, 6) is inside
+|
+|
+cell (1, 8) is inside
+|
+|
+cell (1, 10) is inside
+|
+|
+cell (1, 12) is inside
+|
+|
+cell (1, 14) is inside
+|
+F direction false
+-
+-
+7 or J
+row 2
+F direction false
+L direction true
+-
+7 or J
+L direction true
+7 or J
+J direction true
+cell (2, 5) is inside
+L direction true
+cell (2, 6) is inside
+7 or J
+J direction true
+|
+cell (2, 8) is inside
+|
+|
+cell (2, 10) is inside
+|
+|
+cell (2, 12) is inside
+|
+L direction true
+7 or J
+J direction true
+cell (2, 15) is inside
+L direction true
+cell (2, 16) is inside
+-
+7 or J
+cell (2, 18) is inside
+7 or J
+7 direction false
+row 3
+F direction false
+-
+-
+7 or J
+F direction false
+-
+-
+7 or J
+7 direction false
+cell (3, 7) is inside
+|
+|
+cell (3, 9) is inside
+L direction true
+cell (3, 10) is inside
+7 or J
+J direction true
+L direction true
+7 or J
+J direction true
+cell (3, 13) is inside
+7 or J
+7 direction false
+F direction false
+7 or J
+7 direction false
+cell (3, 16) is inside
+F direction false
+cell (3, 17) is inside
+7 or J
+cell (3, 18) is inside
+-
+row 4
+L direction true
+-
+-
+-
+7 or J
+J direction true
+cell (4, 4) is inside
+F direction false
+cell (4, 5) is inside
+-
+7 or J
+cell (4, 7) is inside
+L direction true
+cell (4, 8) is inside
+7 or J
+J direction true
+.
+|
+cell (4, 11) is inside
+|
+-
+F direction false
+7 or J
+L direction true
+7 or J
+J direction true
+cell (4, 17) is inside
+7 or J
+cell (4, 18) is inside
+7 or J
+7 direction false
+row 5
+|
+cell (5, 0) is inside
+F direction false
+cell (5, 1) is inside
+|
+F direction false
+-
+7 or J
+F direction false
+-
+-
+-
+7 or J
+7 direction false
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+7 direction false
+-
+L direction true
+7 or J
+L direction true
+|
+cell (5, 17) is inside
+7 or J
+cell (5, 18) is inside
+|
+row 6
+|
+cell (6, 0) is inside
+F direction false
+cell (6, 1) is inside
+F direction false
+cell (6, 2) is inside
+7 or J
+cell (6, 3) is inside
+F direction false
+cell (6, 4) is inside
+7 or J
+7 direction false
+L direction true
+7 or J
+F direction false
+-
+7 or J
+F direction false
+7 or J
+7 direction false
+cell (6, 12) is inside
+|
+7 or J
+L direction true
+-
+-
+-
+7 or J
+row 7
+.
+-
+L direction true
+-
+7 or J
+J direction true
+cell (7, 4) is inside
+L direction true
+cell (7, 5) is inside
+7 or J
+cell (7, 6) is inside
+|
+|
+cell (7, 8) is inside
+F direction false
+cell (7, 9) is inside
+7 or J
+7 direction false
+|
+cell (7, 11) is inside
+L direction true
+cell (7, 12) is inside
+7 or J
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+-
+7 or J
+7 direction false
+F direction false
+7 or J
+7 direction false
+cell (7, 18) is inside
+|
+row 8
+.
+.
+L direction true
+7 or J
+L direction true
+F direction false
+7 or J
+|
+cell (8, 7) is inside
+|
+|
+cell (8, 9) is inside
+|
+|
+cell (8, 11) is inside
+F direction false
+cell (8, 12) is inside
+7 or J
+cell (8, 13) is inside
+L direction true
+cell (8, 14) is inside
+7 or J
+cell (8, 15) is inside
+|
+|
+cell (8, 17) is inside
+L direction true
+cell (8, 18) is inside
+7 or J
+J direction true
+row 9
+.
+.
+7 or J
+L direction true
+7 or J
+J direction true
+cell (9, 4) is inside
+L direction true
+cell (9, 5) is inside
+-
+7 or J
+J direction true
+L direction true
+7 or J
+J direction true
+cell (9, 9) is inside
+L direction true
+cell (9, 10) is inside
+7 or J
+J direction true
+L direction true
+-
+-
+7 or J
+J direction true
+cell (9, 15) is inside
+L direction true
+cell (9, 16) is inside
+7 or J
+J direction true
+.
+L direction true
+75
+    day-10_test.go:152: Puzzle2(FF7FSF7F7F7F7F7F---7
+        L|LJ||||||||||||F--J
+        FL-7LJLJ||||||LJL-77
+        F--JF--7||LJLJ7F7FJ-
+        L---JF-JLJ.||-FJLJJ7
+        |F|F-JF---7F7-L7L|7|
+        |FFJF7L7F-JF7|JL---7
+        7-L-JL7||F7|L7F-7F7|
+        L.L7LFJ|||||FJL7||LJ
+        L7JLJL-JLJLJL--JLJ.L) FAILED - Expected 10 Got 0
+--- FAIL: TestPuzzle2 (0.00s)
+FAIL
+exit status 1
+FAIL	github.com/ufJmacca/advent2023/day-10	0.004s
+=== RUN   TestPuzzle1
+    day-10_test.go:43: Puzzle1(.....
+        .S-7.
+        .|.|.
+        .L-J.
+        .....) PASSED
+    day-10_test.go:43: Puzzle1(..F7.
+        .FJ|.
+        SJ.L7
+        |F--J
+        LJ...) PASSED
+--- PASS: TestPuzzle1 (0.00s)
+=== RUN   TestFindStart
+    day-10_test.go:72: FindStart([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]]) PASSED
+    day-10_test.go:72: FindStart([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]]) PASSED
+--- PASS: TestFindStart (0.00s)
+=== RUN   TestFindConnectedTiles
+    day-10_test.go:101: FindConnectedTiles([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]], {1 1}) PASSED
+    day-10_test.go:101: FindConnectedTiles([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]], {2 0}) PASSED
+--- PASS: TestFindConnectedTiles (0.00s)
+=== RUN   TestPuzzle2
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+-
+7 or J
+.
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+-
+-
+-
+-
+7 or J
+cell (2, 8) is inside
+|
+.
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (3, 8) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (4, 8) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+7 or J
+7 direction true
+.
+F direction false
+-
+7 or J
+J direction false
+cell (5, 8) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+.
+|
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+.
+cell (6, 8) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+.
+L direction true
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+16
+    day-10_test.go:152: Puzzle2(...........
+        .S-------7.
+        .|F-----7|.
+        .||.....||.
+        .||.....||.
+        .|L-7.F-J|.
+        .|..|.|..|.
+        .L--J.L--J.
+        ...........) FAILED - Expected 4 Got 0
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+7 or J
+.
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+-
+-
+-
+7 or J
+cell (2, 7) is inside
+|
+.
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (3, 7) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (4, 7) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+7 or J
+7 direction true
+F direction false
+-
+7 or J
+J direction false
+cell (5, 7) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+|
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+L direction true
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+16
+    day-10_test.go:152: Puzzle2(..........
+        .S------7.
+        .|F----7|.
+        .||OOOO||.
+        .||OOOO||.
+        .|L-7F-J|.
+        .|II||II|.
+        .L--JL--J.
+        ..........) FAILED - Expected 4 Got 0
+row 0
+.
+F direction false
+-
+-
+-
+-
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+-
+7 or J
+.
+.
+.
+.
+row 1
+.
+|
+cell (1, 1) is inside
+F direction false
+cell (1, 2) is inside
+-
+-
+7 or J
+cell (1, 5) is inside
+|
+|
+cell (1, 7) is inside
+|
+|
+cell (1, 9) is inside
+|
+|
+cell (1, 11) is inside
+|
+|
+cell (1, 13) is inside
+F direction false
+cell (1, 14) is inside
+7 or J
+J direction false
+.
+.
+.
+.
+row 2
+.
+|
+cell (2, 1) is inside
+|
+.
+F direction false
+7 or J
+J direction false
+cell (2, 5) is inside
+|
+|
+cell (2, 7) is inside
+|
+|
+cell (2, 9) is inside
+|
+|
+cell (2, 11) is inside
+|
+|
+cell (2, 13) is inside
+L direction true
+cell (2, 14) is inside
+7 or J
+7 direction true
+.
+.
+.
+.
+row 3
+F direction false
+7 or J
+J direction false
+cell (3, 1) is inside
+L direction true
+cell (3, 2) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (3, 5) is inside
+L direction true
+cell (3, 6) is inside
+7 or J
+cell (3, 7) is inside
+L direction true
+cell (3, 8) is inside
+7 or J
+cell (3, 9) is inside
+|
+|
+cell (3, 11) is inside
+L direction true
+cell (3, 12) is inside
+7 or J
+cell (3, 13) is inside
+.
+cell (3, 14) is inside
+L direction true
+cell (3, 15) is inside
+-
+7 or J
+7 direction true
+.
+.
+row 4
+L direction true
+-
+-
+7 or J
+.
+L direction true
+7 or J
+7 direction true
+cell (4, 6) is inside
+.
+cell (4, 7) is inside
+.
+cell (4, 8) is inside
+.
+cell (4, 9) is inside
+L direction true
+cell (4, 10) is inside
+7 or J
+cell (4, 11) is inside
+F direction false
+cell (4, 12) is inside
+7 or J
+cell (4, 13) is inside
+F direction false
+cell (4, 14) is inside
+-
+7 or J
+cell (4, 16) is inside
+L direction true
+cell (4, 17) is inside
+7 or J
+7 direction true
+.
+row 5
+.
+.
+.
+.
+F direction false
+-
+7 or J
+J direction false
+cell (5, 6) is inside
+.
+cell (5, 7) is inside
+.
+cell (5, 8) is inside
+F direction false
+cell (5, 9) is inside
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+J direction false
+|
+cell (5, 13) is inside
+L direction true
+cell (5, 14) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (5, 17) is inside
+L direction true
+cell (5, 18) is inside
+7 or J
+7 direction true
+row 6
+.
+.
+.
+.
+L direction true
+7 or J
+7 direction true
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+F direction false
+cell (6, 7) is inside
+7 or J
+cell (6, 8) is inside
+|
+|
+cell (6, 10) is inside
+L direction true
+cell (6, 11) is inside
+7 or J
+7 direction true
+|
+cell (6, 13) is inside
+.
+cell (6, 14) is inside
+L direction true
+cell (6, 15) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (6, 18) is inside
+|
+row 7
+.
+.
+.
+.
+.
+|
+cell (7, 5) is inside
+F direction false
+cell (7, 6) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+|
+cell (7, 10) is inside
+F direction false
+cell (7, 11) is inside
+7 or J
+J direction false
+|
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+7 or J
+cell (7, 15) is inside
+|
+.
+L direction true
+7 or J
+row 8
+.
+.
+.
+.
+F direction false
+7 or J
+J direction false
+cell (8, 5) is inside
+L direction true
+cell (8, 6) is inside
+-
+7 or J
+7 direction true
+.
+|
+cell (8, 10) is inside
+|
+.
+|
+cell (8, 13) is inside
+|
+|
+cell (8, 15) is inside
+|
+.
+.
+.
+row 9
+.
+.
+.
+.
+L direction true
+-
+-
+-
+7 or J
+.
+L direction true
+7 or J
+.
+L direction true
+7 or J
+L direction true
+7 or J
+.
+.
+.
+70
+    day-10_test.go:152: Puzzle2(.F----7F7F7F7F-7....
+        .|F--7||||||||FJ....
+        .||.FJ||||||||L7....
+        FJL7L7LJLJ||LJ.L-7..
+        L--J.L7...LJS7F-7L7.
+        ....F-J..F7FJ|L7L7L7
+        ....L7.F7||L7|.L7L7|
+        .....|FJLJ|FJ|F7|.LJ
+        ....FJL-7.||.||||...
+        ....L---J.LJ.LJLJ...) FAILED - Expected 8 Got 0
+row 0
+F direction false
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+-
+-
+-
+7 or J
+row 1
+L direction true
+|
+cell (1, 1) is inside
+L direction true
+cell (1, 2) is inside
+7 or J
+cell (1, 3) is inside
+|
+|
+cell (1, 5) is inside
+|
+|
+cell (1, 7) is inside
+|
+|
+cell (1, 9) is inside
+|
+|
+cell (1, 11) is inside
+|
+|
+cell (1, 13) is inside
+|
+|
+cell (1, 15) is inside
+F direction false
+cell (1, 16) is inside
+-
+-
+7 or J
+J direction false
+row 2
+F direction false
+L direction true
+-
+7 or J
+7 direction true
+cell (2, 3) is inside
+L direction true
+cell (2, 4) is inside
+7 or J
+cell (2, 5) is inside
+L direction true
+cell (2, 6) is inside
+7 or J
+cell (2, 7) is inside
+|
+|
+cell (2, 9) is inside
+|
+|
+cell (2, 11) is inside
+|
+|
+cell (2, 13) is inside
+L direction true
+cell (2, 14) is inside
+7 or J
+cell (2, 15) is inside
+L direction true
+cell (2, 16) is inside
+-
+7 or J
+7 direction true
+7 or J
+row 3
+F direction false
+-
+-
+7 or J
+J direction false
+cell (3, 3) is inside
+F direction false
+cell (3, 4) is inside
+-
+-
+7 or J
+cell (3, 7) is inside
+|
+|
+cell (3, 9) is inside
+L direction true
+cell (3, 10) is inside
+7 or J
+cell (3, 11) is inside
+L direction true
+cell (3, 12) is inside
+7 or J
+cell (3, 13) is inside
+7 or J
+cell (3, 14) is inside
+F direction false
+cell (3, 15) is inside
+7 or J
+cell (3, 16) is inside
+F direction false
+cell (3, 17) is inside
+7 or J
+J direction false
+-
+row 4
+L direction true
+-
+-
+-
+7 or J
+F direction false
+-
+7 or J
+J direction false
+cell (4, 7) is inside
+L direction true
+cell (4, 8) is inside
+7 or J
+cell (4, 9) is inside
+.
+cell (4, 10) is inside
+|
+|
+cell (4, 12) is inside
+-
+F direction false
+cell (4, 14) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+7 or J
+J direction false
+cell (4, 18) is inside
+7 or J
+cell (4, 19) is inside
+row 5
+|
+cell (5, 0) is inside
+F direction false
+cell (5, 1) is inside
+|
+F direction false
+-
+7 or J
+J direction false
+cell (5, 5) is inside
+F direction false
+cell (5, 6) is inside
+-
+-
+-
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+cell (5, 12) is inside
+-
+L direction true
+cell (5, 14) is inside
+7 or J
+7 direction true
+L direction true
+|
+cell (5, 17) is inside
+7 or J
+7 direction true
+|
+cell (5, 19) is inside
+row 6
+|
+cell (6, 0) is inside
+F direction false
+cell (6, 1) is inside
+F direction false
+cell (6, 2) is inside
+7 or J
+J direction false
+F direction false
+7 or J
+L direction true
+7 or J
+7 direction true
+cell (6, 7) is inside
+F direction false
+cell (6, 8) is inside
+-
+7 or J
+J direction false
+F direction false
+7 or J
+|
+cell (6, 13) is inside
+7 or J
+J direction false
+L direction true
+-
+-
+-
+7 or J
+7 direction true
+cell (6, 19) is inside
+row 7
+.
+-
+L direction true
+-
+7 or J
+L direction true
+7 or J
+7 direction true
+cell (7, 6) is inside
+|
+|
+cell (7, 8) is inside
+F direction false
+cell (7, 9) is inside
+7 or J
+cell (7, 10) is inside
+|
+L direction true
+7 or J
+7 direction true
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+-
+7 or J
+cell (7, 16) is inside
+F direction false
+cell (7, 17) is inside
+7 or J
+cell (7, 18) is inside
+|
+row 8
+.
+.
+L direction true
+7 or J
+7 direction true
+cell (8, 3) is inside
+L direction true
+cell (8, 4) is inside
+F direction false
+cell (8, 5) is inside
+7 or J
+J direction false
+|
+cell (8, 7) is inside
+|
+|
+cell (8, 9) is inside
+|
+|
+cell (8, 11) is inside
+F direction false
+cell (8, 12) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+7 direction true
+cell (8, 15) is inside
+|
+|
+cell (8, 17) is inside
+L direction true
+cell (8, 18) is inside
+7 or J
+cell (8, 19) is inside
+row 9
+.
+.
+7 or J
+J direction false
+cell (9, 2) is inside
+L direction true
+cell (9, 3) is inside
+7 or J
+cell (9, 4) is inside
+L direction true
+cell (9, 5) is inside
+-
+7 or J
+cell (9, 7) is inside
+L direction true
+cell (9, 8) is inside
+7 or J
+cell (9, 9) is inside
+L direction true
+cell (9, 10) is inside
+7 or J
+cell (9, 11) is inside
+L direction true
+cell (9, 12) is inside
+-
+-
+7 or J
+cell (9, 15) is inside
+L direction true
+cell (9, 16) is inside
+7 or J
+cell (9, 17) is inside
+.
+cell (9, 18) is inside
+L direction true
+cell (9, 19) is inside
+93
+    day-10_test.go:152: Puzzle2(FF7FSF7F7F7F7F7F---7
+        L|LJ||||||||||||F--J
+        FL-7LJLJ||||||LJL-77
+        F--JF--7||LJLJ7F7FJ-
+        L---JF-JLJ.||-FJLJJ7
+        |F|F-JF---7F7-L7L|7|
+        |FFJF7L7F-JF7|JL---7
+        7-L-JL7||F7|L7F-7F7|
+        L.L7LFJ|||||FJL7||LJ
+        L7JLJL-JLJLJL--JLJ.L) FAILED - Expected 10 Got 0
+--- FAIL: TestPuzzle2 (0.00s)
+FAIL
+exit status 1
+FAIL	github.com/ufJmacca/advent2023/day-10	0.004s
+=== RUN   TestPuzzle1
+    day-10_test.go:43: Puzzle1(.....
+        .S-7.
+        .|.|.
+        .L-J.
+        .....) PASSED
+    day-10_test.go:43: Puzzle1(..F7.
+        .FJ|.
+        SJ.L7
+        |F--J
+        LJ...) PASSED
+--- PASS: TestPuzzle1 (0.00s)
+=== RUN   TestFindStart
+    day-10_test.go:72: FindStart([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]]) PASSED
+    day-10_test.go:72: FindStart([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]]) PASSED
+--- PASS: TestFindStart (0.00s)
+=== RUN   TestFindConnectedTiles
+    day-10_test.go:101: FindConnectedTiles([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]], {1 1}) PASSED
+    day-10_test.go:101: FindConnectedTiles([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]], {2 0}) PASSED
+--- PASS: TestFindConnectedTiles (0.00s)
+=== RUN   TestPuzzle2
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+-
+7 or J
+.
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+cell (2, 3) is inside
+-
+cell (2, 4) is inside
+-
+cell (2, 5) is inside
+-
+cell (2, 6) is inside
+-
+cell (2, 7) is inside
+7 or J
+cell (2, 8) is inside
+|
+.
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (3, 8) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (4, 8) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+cell (5, 3) is inside
+7 or J
+7 direction true
+.
+F direction false
+-
+7 or J
+J direction false
+cell (5, 8) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+.
+|
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+.
+cell (6, 8) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+.
+L direction true
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+22
+    day-10_test.go:152: Puzzle2(...........
+        .S-------7.
+        .|F-----7|.
+        .||.....||.
+        .||.....||.
+        .|L-7.F-J|.
+        .|..|.|..|.
+        .L--J.L--J.
+        ...........) FAILED - Expected 4 Got 0
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+7 or J
+.
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+cell (2, 3) is inside
+-
+cell (2, 4) is inside
+-
+cell (2, 5) is inside
+-
+cell (2, 6) is inside
+7 or J
+cell (2, 7) is inside
+|
+.
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (3, 7) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (4, 7) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+cell (5, 3) is inside
+7 or J
+7 direction true
+F direction false
+-
+7 or J
+J direction false
+cell (5, 7) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+|
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+L direction true
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+21
+    day-10_test.go:152: Puzzle2(..........
+        .S------7.
+        .|F----7|.
+        .||OOOO||.
+        .||OOOO||.
+        .|L-7F-J|.
+        .|II||II|.
+        .L--JL--J.
+        ..........) FAILED - Expected 4 Got 0
+row 0
+.
+F direction false
+-
+-
+-
+-
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+-
+7 or J
+.
+.
+.
+.
+row 1
+.
+|
+cell (1, 1) is inside
+F direction false
+cell (1, 2) is inside
+-
+cell (1, 3) is inside
+-
+cell (1, 4) is inside
+7 or J
+cell (1, 5) is inside
+|
+|
+cell (1, 7) is inside
+|
+|
+cell (1, 9) is inside
+|
+|
+cell (1, 11) is inside
+|
+|
+cell (1, 13) is inside
+F direction false
+cell (1, 14) is inside
+7 or J
+J direction false
+.
+.
+.
+.
+row 2
+.
+|
+cell (2, 1) is inside
+|
+.
+F direction false
+7 or J
+J direction false
+cell (2, 5) is inside
+|
+|
+cell (2, 7) is inside
+|
+|
+cell (2, 9) is inside
+|
+|
+cell (2, 11) is inside
+|
+|
+cell (2, 13) is inside
+L direction true
+cell (2, 14) is inside
+7 or J
+7 direction true
+.
+.
+.
+.
+row 3
+F direction false
+7 or J
+J direction false
+cell (3, 1) is inside
+L direction true
+cell (3, 2) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (3, 5) is inside
+L direction true
+cell (3, 6) is inside
+7 or J
+cell (3, 7) is inside
+L direction true
+cell (3, 8) is inside
+7 or J
+cell (3, 9) is inside
+|
+|
+cell (3, 11) is inside
+L direction true
+cell (3, 12) is inside
+7 or J
+cell (3, 13) is inside
+.
+cell (3, 14) is inside
+L direction true
+cell (3, 15) is inside
+-
+cell (3, 16) is inside
+7 or J
+7 direction true
+.
+.
+row 4
+L direction true
+-
+-
+7 or J
+.
+L direction true
+7 or J
+7 direction true
+cell (4, 6) is inside
+.
+cell (4, 7) is inside
+.
+cell (4, 8) is inside
+.
+cell (4, 9) is inside
+L direction true
+cell (4, 10) is inside
+7 or J
+cell (4, 11) is inside
+F direction false
+cell (4, 12) is inside
+7 or J
+cell (4, 13) is inside
+F direction false
+cell (4, 14) is inside
+-
+cell (4, 15) is inside
+7 or J
+cell (4, 16) is inside
+L direction true
+cell (4, 17) is inside
+7 or J
+7 direction true
+.
+row 5
+.
+.
+.
+.
+F direction false
+-
+7 or J
+J direction false
+cell (5, 6) is inside
+.
+cell (5, 7) is inside
+.
+cell (5, 8) is inside
+F direction false
+cell (5, 9) is inside
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+J direction false
+|
+cell (5, 13) is inside
+L direction true
+cell (5, 14) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (5, 17) is inside
+L direction true
+cell (5, 18) is inside
+7 or J
+7 direction true
+row 6
+.
+.
+.
+.
+L direction true
+7 or J
+7 direction true
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+F direction false
+cell (6, 7) is inside
+7 or J
+cell (6, 8) is inside
+|
+|
+cell (6, 10) is inside
+L direction true
+cell (6, 11) is inside
+7 or J
+7 direction true
+|
+cell (6, 13) is inside
+.
+cell (6, 14) is inside
+L direction true
+cell (6, 15) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (6, 18) is inside
+|
+row 7
+.
+.
+.
+.
+.
+|
+cell (7, 5) is inside
+F direction false
+cell (7, 6) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+|
+cell (7, 10) is inside
+F direction false
+cell (7, 11) is inside
+7 or J
+J direction false
+|
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+7 or J
+cell (7, 15) is inside
+|
+.
+L direction true
+7 or J
+row 8
+.
+.
+.
+.
+F direction false
+7 or J
+J direction false
+cell (8, 5) is inside
+L direction true
+cell (8, 6) is inside
+-
+cell (8, 7) is inside
+7 or J
+7 direction true
+.
+|
+cell (8, 10) is inside
+|
+.
+|
+cell (8, 13) is inside
+|
+|
+cell (8, 15) is inside
+|
+.
+.
+.
+row 9
+.
+.
+.
+.
+L direction true
+-
+-
+-
+7 or J
+.
+L direction true
+7 or J
+.
+L direction true
+7 or J
+L direction true
+7 or J
+.
+.
+.
+75
+    day-10_test.go:152: Puzzle2(.F----7F7F7F7F-7....
+        .|F--7||||||||FJ....
+        .||.FJ||||||||L7....
+        FJL7L7LJLJ||LJ.L-7..
+        L--J.L7...LJS7F-7L7.
+        ....F-J..F7FJ|L7L7L7
+        ....L7.F7||L7|.L7L7|
+        .....|FJLJ|FJ|F7|.LJ
+        ....FJL-7.||.||||...
+        ....L---J.LJ.LJLJ...) FAILED - Expected 8 Got 0
+row 0
+F direction false
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+-
+-
+-
+7 or J
+row 1
+L direction true
+|
+cell (1, 1) is inside
+L direction true
+cell (1, 2) is inside
+7 or J
+cell (1, 3) is inside
+|
+|
+cell (1, 5) is inside
+|
+|
+cell (1, 7) is inside
+|
+|
+cell (1, 9) is inside
+|
+|
+cell (1, 11) is inside
+|
+|
+cell (1, 13) is inside
+|
+|
+cell (1, 15) is inside
+F direction false
+cell (1, 16) is inside
+-
+cell (1, 17) is inside
+-
+cell (1, 18) is inside
+7 or J
+J direction false
+row 2
+F direction false
+L direction true
+-
+7 or J
+7 direction true
+cell (2, 3) is inside
+L direction true
+cell (2, 4) is inside
+7 or J
+cell (2, 5) is inside
+L direction true
+cell (2, 6) is inside
+7 or J
+cell (2, 7) is inside
+|
+|
+cell (2, 9) is inside
+|
+|
+cell (2, 11) is inside
+|
+|
+cell (2, 13) is inside
+L direction true
+cell (2, 14) is inside
+7 or J
+cell (2, 15) is inside
+L direction true
+cell (2, 16) is inside
+-
+cell (2, 17) is inside
+7 or J
+7 direction true
+7 or J
+row 3
+F direction false
+-
+-
+7 or J
+J direction false
+cell (3, 3) is inside
+F direction false
+cell (3, 4) is inside
+-
+cell (3, 5) is inside
+-
+cell (3, 6) is inside
+7 or J
+cell (3, 7) is inside
+|
+|
+cell (3, 9) is inside
+L direction true
+cell (3, 10) is inside
+7 or J
+cell (3, 11) is inside
+L direction true
+cell (3, 12) is inside
+7 or J
+cell (3, 13) is inside
+7 or J
+cell (3, 14) is inside
+F direction false
+cell (3, 15) is inside
+7 or J
+cell (3, 16) is inside
+F direction false
+cell (3, 17) is inside
+7 or J
+J direction false
+-
+row 4
+L direction true
+-
+-
+-
+7 or J
+F direction false
+-
+7 or J
+J direction false
+cell (4, 7) is inside
+L direction true
+cell (4, 8) is inside
+7 or J
+cell (4, 9) is inside
+.
+cell (4, 10) is inside
+|
+|
+cell (4, 12) is inside
+-
+cell (4, 13) is inside
+F direction false
+cell (4, 14) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+7 or J
+J direction false
+cell (4, 18) is inside
+7 or J
+cell (4, 19) is inside
+row 5
+|
+cell (5, 0) is inside
+F direction false
+cell (5, 1) is inside
+|
+F direction false
+-
+7 or J
+J direction false
+cell (5, 5) is inside
+F direction false
+cell (5, 6) is inside
+-
+cell (5, 7) is inside
+-
+cell (5, 8) is inside
+-
+cell (5, 9) is inside
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+cell (5, 12) is inside
+-
+cell (5, 13) is inside
+L direction true
+cell (5, 14) is inside
+7 or J
+7 direction true
+L direction true
+|
+cell (5, 17) is inside
+7 or J
+7 direction true
+|
+cell (5, 19) is inside
+row 6
+|
+cell (6, 0) is inside
+F direction false
+cell (6, 1) is inside
+F direction false
+cell (6, 2) is inside
+7 or J
+J direction false
+F direction false
+7 or J
+L direction true
+7 or J
+7 direction true
+cell (6, 7) is inside
+F direction false
+cell (6, 8) is inside
+-
+cell (6, 9) is inside
+7 or J
+J direction false
+F direction false
+7 or J
+|
+cell (6, 13) is inside
+7 or J
+J direction false
+L direction true
+-
+-
+-
+7 or J
+7 direction true
+cell (6, 19) is inside
+row 7
+.
+-
+L direction true
+-
+7 or J
+L direction true
+7 or J
+7 direction true
+cell (7, 6) is inside
+|
+|
+cell (7, 8) is inside
+F direction false
+cell (7, 9) is inside
+7 or J
+cell (7, 10) is inside
+|
+L direction true
+7 or J
+7 direction true
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+-
+cell (7, 15) is inside
+7 or J
+cell (7, 16) is inside
+F direction false
+cell (7, 17) is inside
+7 or J
+cell (7, 18) is inside
+|
+row 8
+.
+.
+L direction true
+7 or J
+7 direction true
+cell (8, 3) is inside
+L direction true
+cell (8, 4) is inside
+F direction false
+cell (8, 5) is inside
+7 or J
+J direction false
+|
+cell (8, 7) is inside
+|
+|
+cell (8, 9) is inside
+|
+|
+cell (8, 11) is inside
+F direction false
+cell (8, 12) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+7 direction true
+cell (8, 15) is inside
+|
+|
+cell (8, 17) is inside
+L direction true
+cell (8, 18) is inside
+7 or J
+cell (8, 19) is inside
+row 9
+.
+.
+7 or J
+J direction false
+cell (9, 2) is inside
+L direction true
+cell (9, 3) is inside
+7 or J
+cell (9, 4) is inside
+L direction true
+cell (9, 5) is inside
+-
+cell (9, 6) is inside
+7 or J
+cell (9, 7) is inside
+L direction true
+cell (9, 8) is inside
+7 or J
+cell (9, 9) is inside
+L direction true
+cell (9, 10) is inside
+7 or J
+cell (9, 11) is inside
+L direction true
+cell (9, 12) is inside
+-
+cell (9, 13) is inside
+-
+cell (9, 14) is inside
+7 or J
+cell (9, 15) is inside
+L direction true
+cell (9, 16) is inside
+7 or J
+cell (9, 17) is inside
+.
+cell (9, 18) is inside
+L direction true
+cell (9, 19) is inside
+108
+    day-10_test.go:152: Puzzle2(FF7FSF7F7F7F7F7F---7
+        L|LJ||||||||||||F--J
+        FL-7LJLJ||||||LJL-77
+        F--JF--7||LJLJ7F7FJ-
+        L---JF-JLJ.||-FJLJJ7
+        |F|F-JF---7F7-L7L|7|
+        |FFJF7L7F-JF7|JL---7
+        7-L-JL7||F7|L7F-7F7|
+        L.L7LFJ|||||FJL7||LJ
+        L7JLJL-JLJLJL--JLJ.L) FAILED - Expected 10 Got 0
+--- FAIL: TestPuzzle2 (0.00s)
+FAIL
+exit status 1
+FAIL	github.com/ufJmacca/advent2023/day-10	0.004s
+=== RUN   TestPuzzle1
+    day-10_test.go:43: Puzzle1(.....
+        .S-7.
+        .|.|.
+        .L-J.
+        .....) PASSED
+    day-10_test.go:43: Puzzle1(..F7.
+        .FJ|.
+        SJ.L7
+        |F--J
+        LJ...) PASSED
+--- PASS: TestPuzzle1 (0.00s)
+=== RUN   TestFindStart
+    day-10_test.go:72: FindStart([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]]) PASSED
+    day-10_test.go:72: FindStart([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]]) PASSED
+--- PASS: TestFindStart (0.00s)
+=== RUN   TestFindConnectedTiles
+    day-10_test.go:101: FindConnectedTiles([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]], {1 1}) PASSED
+    day-10_test.go:101: FindConnectedTiles([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]], {2 0}) PASSED
+--- PASS: TestFindConnectedTiles (0.00s)
+=== RUN   TestPuzzle2
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+-
+7 or J
+.
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+cell (2, 3) is inside
+-
+cell (2, 4) is inside
+-
+cell (2, 5) is inside
+-
+cell (2, 6) is inside
+-
+cell (2, 7) is inside
+7 or J
+cell (2, 8) is inside
+|
+.
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (3, 8) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (4, 8) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+cell (5, 3) is inside
+7 or J
+7 direction true
+.
+F direction false
+-
+7 or J
+J direction false
+cell (5, 8) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+.
+|
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+.
+cell (6, 8) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+.
+L direction true
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+4
+    day-10_test.go:152: Puzzle2(...........
+        .S-------7.
+        .|F-----7|.
+        .||.....||.
+        .||.....||.
+        .|L-7.F-J|.
+        .|..|.|..|.
+        .L--J.L--J.
+        ...........) FAILED - Expected 4 Got 0
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+7 or J
+.
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+cell (2, 3) is inside
+-
+cell (2, 4) is inside
+-
+cell (2, 5) is inside
+-
+cell (2, 6) is inside
+7 or J
+cell (2, 7) is inside
+|
+.
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (3, 7) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (4, 7) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+cell (5, 3) is inside
+7 or J
+7 direction true
+F direction false
+-
+7 or J
+J direction false
+cell (5, 7) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+|
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+L direction true
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+4
+    day-10_test.go:152: Puzzle2(..........
+        .S------7.
+        .|F----7|.
+        .||OOOO||.
+        .||OOOO||.
+        .|L-7F-J|.
+        .|II||II|.
+        .L--JL--J.
+        ..........) FAILED - Expected 4 Got 0
+row 0
+.
+F direction false
+-
+-
+-
+-
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+-
+7 or J
+.
+.
+.
+.
+row 1
+.
+|
+cell (1, 1) is inside
+F direction false
+cell (1, 2) is inside
+-
+cell (1, 3) is inside
+-
+cell (1, 4) is inside
+7 or J
+cell (1, 5) is inside
+|
+|
+cell (1, 7) is inside
+|
+|
+cell (1, 9) is inside
+|
+|
+cell (1, 11) is inside
+|
+|
+cell (1, 13) is inside
+F direction false
+cell (1, 14) is inside
+7 or J
+J direction false
+.
+.
+.
+.
+row 2
+.
+|
+cell (2, 1) is inside
+|
+.
+F direction false
+7 or J
+J direction false
+cell (2, 5) is inside
+|
+|
+cell (2, 7) is inside
+|
+|
+cell (2, 9) is inside
+|
+|
+cell (2, 11) is inside
+|
+|
+cell (2, 13) is inside
+L direction true
+cell (2, 14) is inside
+7 or J
+7 direction true
+.
+.
+.
+.
+row 3
+F direction false
+7 or J
+J direction false
+cell (3, 1) is inside
+L direction true
+cell (3, 2) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (3, 5) is inside
+L direction true
+cell (3, 6) is inside
+7 or J
+cell (3, 7) is inside
+L direction true
+cell (3, 8) is inside
+7 or J
+cell (3, 9) is inside
+|
+|
+cell (3, 11) is inside
+L direction true
+cell (3, 12) is inside
+7 or J
+cell (3, 13) is inside
+.
+cell (3, 14) is inside
+L direction true
+cell (3, 15) is inside
+-
+cell (3, 16) is inside
+7 or J
+7 direction true
+.
+.
+row 4
+L direction true
+-
+-
+7 or J
+.
+L direction true
+7 or J
+7 direction true
+cell (4, 6) is inside
+.
+cell (4, 7) is inside
+.
+cell (4, 8) is inside
+.
+cell (4, 9) is inside
+L direction true
+cell (4, 10) is inside
+7 or J
+cell (4, 11) is inside
+F direction false
+cell (4, 12) is inside
+7 or J
+cell (4, 13) is inside
+F direction false
+cell (4, 14) is inside
+-
+cell (4, 15) is inside
+7 or J
+cell (4, 16) is inside
+L direction true
+cell (4, 17) is inside
+7 or J
+7 direction true
+.
+row 5
+.
+.
+.
+.
+F direction false
+-
+7 or J
+J direction false
+cell (5, 6) is inside
+.
+cell (5, 7) is inside
+.
+cell (5, 8) is inside
+F direction false
+cell (5, 9) is inside
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+J direction false
+|
+cell (5, 13) is inside
+L direction true
+cell (5, 14) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (5, 17) is inside
+L direction true
+cell (5, 18) is inside
+7 or J
+7 direction true
+row 6
+.
+.
+.
+.
+L direction true
+7 or J
+7 direction true
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+F direction false
+cell (6, 7) is inside
+7 or J
+cell (6, 8) is inside
+|
+|
+cell (6, 10) is inside
+L direction true
+cell (6, 11) is inside
+7 or J
+7 direction true
+|
+cell (6, 13) is inside
+.
+cell (6, 14) is inside
+L direction true
+cell (6, 15) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (6, 18) is inside
+|
+row 7
+.
+.
+.
+.
+.
+|
+cell (7, 5) is inside
+F direction false
+cell (7, 6) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+|
+cell (7, 10) is inside
+F direction false
+cell (7, 11) is inside
+7 or J
+J direction false
+|
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+7 or J
+cell (7, 15) is inside
+|
+.
+L direction true
+7 or J
+row 8
+.
+.
+.
+.
+F direction false
+7 or J
+J direction false
+cell (8, 5) is inside
+L direction true
+cell (8, 6) is inside
+-
+cell (8, 7) is inside
+7 or J
+7 direction true
+.
+|
+cell (8, 10) is inside
+|
+.
+|
+cell (8, 13) is inside
+|
+|
+cell (8, 15) is inside
+|
+.
+.
+.
+row 9
+.
+.
+.
+.
+L direction true
+-
+-
+-
+7 or J
+.
+L direction true
+7 or J
+.
+L direction true
+7 or J
+L direction true
+7 or J
+.
+.
+.
+8
+    day-10_test.go:152: Puzzle2(.F----7F7F7F7F-7....
+        .|F--7||||||||FJ....
+        .||.FJ||||||||L7....
+        FJL7L7LJLJ||LJ.L-7..
+        L--J.L7...LJS7F-7L7.
+        ....F-J..F7FJ|L7L7L7
+        ....L7.F7||L7|.L7L7|
+        .....|FJLJ|FJ|F7|.LJ
+        ....FJL-7.||.||||...
+        ....L---J.LJ.LJLJ...) FAILED - Expected 8 Got 0
+row 0
+F direction false
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+-
+-
+-
+7 or J
+row 1
+L direction true
+|
+cell (1, 1) is inside
+L direction true
+cell (1, 2) is inside
+7 or J
+cell (1, 3) is inside
+|
+|
+cell (1, 5) is inside
+|
+|
+cell (1, 7) is inside
+|
+|
+cell (1, 9) is inside
+|
+|
+cell (1, 11) is inside
+|
+|
+cell (1, 13) is inside
+|
+|
+cell (1, 15) is inside
+F direction false
+cell (1, 16) is inside
+-
+cell (1, 17) is inside
+-
+cell (1, 18) is inside
+7 or J
+J direction false
+row 2
+F direction false
+L direction true
+-
+7 or J
+7 direction true
+cell (2, 3) is inside
+L direction true
+cell (2, 4) is inside
+7 or J
+cell (2, 5) is inside
+L direction true
+cell (2, 6) is inside
+7 or J
+cell (2, 7) is inside
+|
+|
+cell (2, 9) is inside
+|
+|
+cell (2, 11) is inside
+|
+|
+cell (2, 13) is inside
+L direction true
+cell (2, 14) is inside
+7 or J
+cell (2, 15) is inside
+L direction true
+cell (2, 16) is inside
+-
+cell (2, 17) is inside
+7 or J
+7 direction true
+7 or J
+row 3
+F direction false
+-
+-
+7 or J
+J direction false
+cell (3, 3) is inside
+F direction false
+cell (3, 4) is inside
+-
+cell (3, 5) is inside
+-
+cell (3, 6) is inside
+7 or J
+cell (3, 7) is inside
+|
+|
+cell (3, 9) is inside
+L direction true
+cell (3, 10) is inside
+7 or J
+cell (3, 11) is inside
+L direction true
+cell (3, 12) is inside
+7 or J
+cell (3, 13) is inside
+7 or J
+cell (3, 14) is inside
+F direction false
+cell (3, 15) is inside
+7 or J
+cell (3, 16) is inside
+F direction false
+cell (3, 17) is inside
+7 or J
+J direction false
+-
+row 4
+L direction true
+-
+-
+-
+7 or J
+F direction false
+-
+7 or J
+J direction false
+cell (4, 7) is inside
+L direction true
+cell (4, 8) is inside
+7 or J
+cell (4, 9) is inside
+.
+cell (4, 10) is inside
+|
+|
+cell (4, 12) is inside
+-
+cell (4, 13) is inside
+F direction false
+cell (4, 14) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+7 or J
+J direction false
+cell (4, 18) is inside
+7 or J
+cell (4, 19) is inside
+row 5
+|
+cell (5, 0) is inside
+F direction false
+cell (5, 1) is inside
+|
+F direction false
+-
+7 or J
+J direction false
+cell (5, 5) is inside
+F direction false
+cell (5, 6) is inside
+-
+cell (5, 7) is inside
+-
+cell (5, 8) is inside
+-
+cell (5, 9) is inside
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+cell (5, 12) is inside
+-
+cell (5, 13) is inside
+L direction true
+cell (5, 14) is inside
+7 or J
+7 direction true
+L direction true
+|
+cell (5, 17) is inside
+7 or J
+7 direction true
+|
+cell (5, 19) is inside
+row 6
+|
+cell (6, 0) is inside
+F direction false
+cell (6, 1) is inside
+F direction false
+cell (6, 2) is inside
+7 or J
+J direction false
+F direction false
+7 or J
+L direction true
+7 or J
+7 direction true
+cell (6, 7) is inside
+F direction false
+cell (6, 8) is inside
+-
+cell (6, 9) is inside
+7 or J
+J direction false
+F direction false
+7 or J
+|
+cell (6, 13) is inside
+7 or J
+J direction false
+L direction true
+-
+-
+-
+7 or J
+7 direction true
+cell (6, 19) is inside
+row 7
+.
+-
+L direction true
+-
+7 or J
+L direction true
+7 or J
+7 direction true
+cell (7, 6) is inside
+|
+|
+cell (7, 8) is inside
+F direction false
+cell (7, 9) is inside
+7 or J
+cell (7, 10) is inside
+|
+L direction true
+7 or J
+7 direction true
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+-
+cell (7, 15) is inside
+7 or J
+cell (7, 16) is inside
+F direction false
+cell (7, 17) is inside
+7 or J
+cell (7, 18) is inside
+|
+row 8
+.
+.
+L direction true
+7 or J
+7 direction true
+cell (8, 3) is inside
+L direction true
+cell (8, 4) is inside
+F direction false
+cell (8, 5) is inside
+7 or J
+J direction false
+|
+cell (8, 7) is inside
+|
+|
+cell (8, 9) is inside
+|
+|
+cell (8, 11) is inside
+F direction false
+cell (8, 12) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+7 direction true
+cell (8, 15) is inside
+|
+|
+cell (8, 17) is inside
+L direction true
+cell (8, 18) is inside
+7 or J
+cell (8, 19) is inside
+row 9
+.
+.
+7 or J
+J direction false
+cell (9, 2) is inside
+L direction true
+cell (9, 3) is inside
+7 or J
+cell (9, 4) is inside
+L direction true
+cell (9, 5) is inside
+-
+cell (9, 6) is inside
+7 or J
+cell (9, 7) is inside
+L direction true
+cell (9, 8) is inside
+7 or J
+cell (9, 9) is inside
+L direction true
+cell (9, 10) is inside
+7 or J
+cell (9, 11) is inside
+L direction true
+cell (9, 12) is inside
+-
+cell (9, 13) is inside
+-
+cell (9, 14) is inside
+7 or J
+cell (9, 15) is inside
+L direction true
+cell (9, 16) is inside
+7 or J
+cell (9, 17) is inside
+.
+cell (9, 18) is inside
+L direction true
+cell (9, 19) is inside
+2
+    day-10_test.go:152: Puzzle2(FF7FSF7F7F7F7F7F---7
+        L|LJ||||||||||||F--J
+        FL-7LJLJ||||||LJL-77
+        F--JF--7||LJLJ7F7FJ-
+        L---JF-JLJ.||-FJLJJ7
+        |F|F-JF---7F7-L7L|7|
+        |FFJF7L7F-JF7|JL---7
+        7-L-JL7||F7|L7F-7F7|
+        L.L7LFJ|||||FJL7||LJ
+        L7JLJL-JLJLJL--JLJ.L) FAILED - Expected 10 Got 0
+--- FAIL: TestPuzzle2 (0.00s)
+FAIL
+exit status 1
+FAIL	github.com/ufJmacca/advent2023/day-10	0.004s
+=== RUN   TestPuzzle1
+    day-10_test.go:43: Puzzle1(.....
+        .S-7.
+        .|.|.
+        .L-J.
+        .....) PASSED
+    day-10_test.go:43: Puzzle1(..F7.
+        .FJ|.
+        SJ.L7
+        |F--J
+        LJ...) PASSED
+--- PASS: TestPuzzle1 (0.00s)
+=== RUN   TestFindStart
+    day-10_test.go:72: FindStart([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]]) PASSED
+    day-10_test.go:72: FindStart([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]]) PASSED
+--- PASS: TestFindStart (0.00s)
+=== RUN   TestFindConnectedTiles
+    day-10_test.go:101: FindConnectedTiles([[. . . . .] [. S - 7 .] [. | . | .] [. L - J .] [. . . . .]], {1 1}) PASSED
+    day-10_test.go:101: FindConnectedTiles([[. . F 7 .] [. F J | .] [S J . L 7] [| F - - J] [L J . . .]], {2 0}) PASSED
+--- PASS: TestFindConnectedTiles (0.00s)
+=== RUN   TestPuzzle2
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+-
+7 or J
+.
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+cell (2, 3) is inside
+-
+cell (2, 4) is inside
+-
+cell (2, 5) is inside
+-
+cell (2, 6) is inside
+-
+cell (2, 7) is inside
+7 or J
+cell (2, 8) is inside
+|
+.
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (3, 8) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+.
+|
+cell (4, 8) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+cell (5, 3) is inside
+7 or J
+7 direction true
+.
+F direction false
+-
+7 or J
+J direction false
+cell (5, 8) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+.
+|
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+.
+cell (6, 8) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+.
+L direction true
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+4
+    day-10_test.go:154: Puzzle2(...........
+        .S-------7.
+        .|F-----7|.
+        .||.....||.
+        .||.....||.
+        .|L-7.F-J|.
+        .|..|.|..|.
+        .L--J.L--J.
+        ...........) PASSED
+row 0
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+row 1
+.
+F direction false
+-
+-
+-
+-
+-
+-
+7 or J
+.
+row 2
+.
+|
+cell (2, 1) is inside
+F direction false
+cell (2, 2) is inside
+-
+cell (2, 3) is inside
+-
+cell (2, 4) is inside
+-
+cell (2, 5) is inside
+-
+cell (2, 6) is inside
+7 or J
+cell (2, 7) is inside
+|
+.
+row 3
+.
+|
+cell (3, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (3, 7) is inside
+|
+.
+row 4
+.
+|
+cell (4, 1) is inside
+|
+.
+.
+.
+.
+|
+cell (4, 7) is inside
+|
+.
+row 5
+.
+|
+cell (5, 1) is inside
+L direction true
+cell (5, 2) is inside
+-
+cell (5, 3) is inside
+7 or J
+7 direction true
+F direction false
+-
+7 or J
+J direction false
+cell (5, 7) is inside
+|
+.
+row 6
+.
+|
+cell (6, 1) is inside
+.
+cell (6, 2) is inside
+.
+cell (6, 3) is inside
+|
+|
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+.
+cell (6, 7) is inside
+|
+.
+row 7
+.
+L direction true
+-
+-
+7 or J
+L direction true
+-
+-
+7 or J
+.
+row 8
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+4
+    day-10_test.go:154: Puzzle2(..........
+        .S------7.
+        .|F----7|.
+        .||OOOO||.
+        .||OOOO||.
+        .|L-7F-J|.
+        .|II||II|.
+        .L--JL--J.
+        ..........) PASSED
+row 0
+.
+F direction false
+-
+-
+-
+-
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+-
+7 or J
+.
+.
+.
+.
+row 1
+.
+|
+cell (1, 1) is inside
+F direction false
+cell (1, 2) is inside
+-
+cell (1, 3) is inside
+-
+cell (1, 4) is inside
+7 or J
+cell (1, 5) is inside
+|
+|
+cell (1, 7) is inside
+|
+|
+cell (1, 9) is inside
+|
+|
+cell (1, 11) is inside
+|
+|
+cell (1, 13) is inside
+F direction false
+cell (1, 14) is inside
+7 or J
+J direction false
+.
+.
+.
+.
+row 2
+.
+|
+cell (2, 1) is inside
+|
+.
+F direction false
+7 or J
+J direction false
+cell (2, 5) is inside
+|
+|
+cell (2, 7) is inside
+|
+|
+cell (2, 9) is inside
+|
+|
+cell (2, 11) is inside
+|
+|
+cell (2, 13) is inside
+L direction true
+cell (2, 14) is inside
+7 or J
+7 direction true
+.
+.
+.
+.
+row 3
+F direction false
+7 or J
+J direction false
+cell (3, 1) is inside
+L direction true
+cell (3, 2) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (3, 5) is inside
+L direction true
+cell (3, 6) is inside
+7 or J
+cell (3, 7) is inside
+L direction true
+cell (3, 8) is inside
+7 or J
+cell (3, 9) is inside
+|
+|
+cell (3, 11) is inside
+L direction true
+cell (3, 12) is inside
+7 or J
+cell (3, 13) is inside
+.
+cell (3, 14) is inside
+L direction true
+cell (3, 15) is inside
+-
+cell (3, 16) is inside
+7 or J
+7 direction true
+.
+.
+row 4
+L direction true
+-
+-
+7 or J
+.
+L direction true
+7 or J
+7 direction true
+cell (4, 6) is inside
+.
+cell (4, 7) is inside
+.
+cell (4, 8) is inside
+.
+cell (4, 9) is inside
+L direction true
+cell (4, 10) is inside
+7 or J
+cell (4, 11) is inside
+F direction false
+cell (4, 12) is inside
+7 or J
+cell (4, 13) is inside
+F direction false
+cell (4, 14) is inside
+-
+cell (4, 15) is inside
+7 or J
+cell (4, 16) is inside
+L direction true
+cell (4, 17) is inside
+7 or J
+7 direction true
+.
+row 5
+.
+.
+.
+.
+F direction false
+-
+7 or J
+J direction false
+cell (5, 6) is inside
+.
+cell (5, 7) is inside
+.
+cell (5, 8) is inside
+F direction false
+cell (5, 9) is inside
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+J direction false
+|
+cell (5, 13) is inside
+L direction true
+cell (5, 14) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (5, 17) is inside
+L direction true
+cell (5, 18) is inside
+7 or J
+7 direction true
+row 6
+.
+.
+.
+.
+L direction true
+7 or J
+7 direction true
+cell (6, 5) is inside
+.
+cell (6, 6) is inside
+F direction false
+cell (6, 7) is inside
+7 or J
+cell (6, 8) is inside
+|
+|
+cell (6, 10) is inside
+L direction true
+cell (6, 11) is inside
+7 or J
+7 direction true
+|
+cell (6, 13) is inside
+.
+cell (6, 14) is inside
+L direction true
+cell (6, 15) is inside
+7 or J
+7 direction true
+L direction true
+7 or J
+7 direction true
+cell (6, 18) is inside
+|
+row 7
+.
+.
+.
+.
+.
+|
+cell (7, 5) is inside
+F direction false
+cell (7, 6) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+|
+cell (7, 10) is inside
+F direction false
+cell (7, 11) is inside
+7 or J
+J direction false
+|
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+7 or J
+cell (7, 15) is inside
+|
+.
+L direction true
+7 or J
+row 8
+.
+.
+.
+.
+F direction false
+7 or J
+J direction false
+cell (8, 5) is inside
+L direction true
+cell (8, 6) is inside
+-
+cell (8, 7) is inside
+7 or J
+7 direction true
+.
+|
+cell (8, 10) is inside
+|
+.
+|
+cell (8, 13) is inside
+|
+|
+cell (8, 15) is inside
+|
+.
+.
+.
+row 9
+.
+.
+.
+.
+L direction true
+-
+-
+-
+7 or J
+.
+L direction true
+7 or J
+.
+L direction true
+7 or J
+L direction true
+7 or J
+.
+.
+.
+8
+    day-10_test.go:154: Puzzle2(.F----7F7F7F7F-7....
+        .|F--7||||||||FJ....
+        .||.FJ||||||||L7....
+        FJL7L7LJLJ||LJ.L-7..
+        L--J.L7...LJS7F-7L7.
+        ....F-J..F7FJ|L7L7L7
+        ....L7.F7||L7|.L7L7|
+        .....|FJLJ|FJ|F7|.LJ
+        ....FJL-7.||.||||...
+        ....L---J.LJ.LJLJ...) PASSED
+row 0
+F direction false
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+7 or J
+F direction false
+-
+-
+-
+7 or J
+row 1
+L direction true
+|
+cell (1, 1) is inside
+L direction true
+cell (1, 2) is inside
+7 or J
+cell (1, 3) is inside
+|
+|
+cell (1, 5) is inside
+|
+|
+cell (1, 7) is inside
+|
+|
+cell (1, 9) is inside
+|
+|
+cell (1, 11) is inside
+|
+|
+cell (1, 13) is inside
+|
+|
+cell (1, 15) is inside
+F direction false
+cell (1, 16) is inside
+-
+cell (1, 17) is inside
+-
+cell (1, 18) is inside
+7 or J
+J direction false
+row 2
+F direction false
+L direction true
+-
+7 or J
+7 direction true
+cell (2, 3) is inside
+L direction true
+cell (2, 4) is inside
+7 or J
+cell (2, 5) is inside
+L direction true
+cell (2, 6) is inside
+7 or J
+cell (2, 7) is inside
+|
+|
+cell (2, 9) is inside
+|
+|
+cell (2, 11) is inside
+|
+|
+cell (2, 13) is inside
+L direction true
+cell (2, 14) is inside
+7 or J
+cell (2, 15) is inside
+L direction true
+cell (2, 16) is inside
+-
+cell (2, 17) is inside
+7 or J
+7 direction true
+7 or J
+row 3
+F direction false
+-
+-
+7 or J
+J direction false
+cell (3, 3) is inside
+F direction false
+cell (3, 4) is inside
+-
+cell (3, 5) is inside
+-
+cell (3, 6) is inside
+7 or J
+cell (3, 7) is inside
+|
+|
+cell (3, 9) is inside
+L direction true
+cell (3, 10) is inside
+7 or J
+cell (3, 11) is inside
+L direction true
+cell (3, 12) is inside
+7 or J
+cell (3, 13) is inside
+7 or J
+cell (3, 14) is inside
+F direction false
+cell (3, 15) is inside
+7 or J
+cell (3, 16) is inside
+F direction false
+cell (3, 17) is inside
+7 or J
+J direction false
+-
+row 4
+L direction true
+-
+-
+-
+7 or J
+F direction false
+-
+7 or J
+J direction false
+cell (4, 7) is inside
+L direction true
+cell (4, 8) is inside
+7 or J
+cell (4, 9) is inside
+.
+cell (4, 10) is inside
+|
+|
+cell (4, 12) is inside
+-
+cell (4, 13) is inside
+F direction false
+cell (4, 14) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+7 or J
+J direction false
+cell (4, 18) is inside
+7 or J
+cell (4, 19) is inside
+row 5
+|
+cell (5, 0) is inside
+F direction false
+cell (5, 1) is inside
+|
+F direction false
+-
+7 or J
+J direction false
+cell (5, 5) is inside
+F direction false
+cell (5, 6) is inside
+-
+cell (5, 7) is inside
+-
+cell (5, 8) is inside
+-
+cell (5, 9) is inside
+7 or J
+cell (5, 10) is inside
+F direction false
+cell (5, 11) is inside
+7 or J
+cell (5, 12) is inside
+-
+cell (5, 13) is inside
+L direction true
+cell (5, 14) is inside
+7 or J
+7 direction true
+L direction true
+|
+cell (5, 17) is inside
+7 or J
+7 direction true
+|
+cell (5, 19) is inside
+row 6
+|
+cell (6, 0) is inside
+F direction false
+cell (6, 1) is inside
+F direction false
+cell (6, 2) is inside
+7 or J
+J direction false
+F direction false
+7 or J
+L direction true
+7 or J
+7 direction true
+cell (6, 7) is inside
+F direction false
+cell (6, 8) is inside
+-
+cell (6, 9) is inside
+7 or J
+J direction false
+F direction false
+7 or J
+|
+cell (6, 13) is inside
+7 or J
+J direction false
+L direction true
+-
+-
+-
+7 or J
+7 direction true
+cell (6, 19) is inside
+row 7
+.
+-
+L direction true
+-
+7 or J
+L direction true
+7 or J
+7 direction true
+cell (7, 6) is inside
+|
+|
+cell (7, 8) is inside
+F direction false
+cell (7, 9) is inside
+7 or J
+cell (7, 10) is inside
+|
+L direction true
+7 or J
+7 direction true
+cell (7, 13) is inside
+F direction false
+cell (7, 14) is inside
+-
+cell (7, 15) is inside
+7 or J
+cell (7, 16) is inside
+F direction false
+cell (7, 17) is inside
+7 or J
+cell (7, 18) is inside
+|
+row 8
+.
+.
+L direction true
+7 or J
+7 direction true
+cell (8, 3) is inside
+L direction true
+cell (8, 4) is inside
+F direction false
+cell (8, 5) is inside
+7 or J
+J direction false
+|
+cell (8, 7) is inside
+|
+|
+cell (8, 9) is inside
+|
+|
+cell (8, 11) is inside
+F direction false
+cell (8, 12) is inside
+7 or J
+J direction false
+L direction true
+7 or J
+7 direction true
+cell (8, 15) is inside
+|
+|
+cell (8, 17) is inside
+L direction true
+cell (8, 18) is inside
+7 or J
+cell (8, 19) is inside
+row 9
+.
+.
+7 or J
+J direction false
+cell (9, 2) is inside
+L direction true
+cell (9, 3) is inside
+7 or J
+cell (9, 4) is inside
+L direction true
+cell (9, 5) is inside
+-
+cell (9, 6) is inside
+7 or J
+cell (9, 7) is inside
+L direction true
+cell (9, 8) is inside
+7 or J
+cell (9, 9) is inside
+L direction true
+cell (9, 10) is inside
+7 or J
+cell (9, 11) is inside
+L direction true
+cell (9, 12) is inside
+-
+cell (9, 13) is inside
+-
+cell (9, 14) is inside
+7 or J
+cell (9, 15) is inside
+L direction true
+cell (9, 16) is inside
+7 or J
+cell (9, 17) is inside
+.
+cell (9, 18) is inside
+L direction true
+cell (9, 19) is inside
+2
+    day-10_test.go:152: Puzzle2(FF7FSF7F7F7F7F7F---7
+        L|LJ||||||||||||F--J
+        FL-7LJLJ||||||LJL-77
+        F--JF--7||LJLJ7F7FJ-
+        L---JF-JLJ.||-FJLJJ7
+        |F|F-JF---7F7-L7L|7|
+        |FFJF7L7F-JF7|JL---7
+        7-L-JL7||F7|L7F-7F7|
+        L.L7LFJ|||||FJL7||LJ
+        L7JLJL-JLJLJL--JLJ.L) FAILED - Expected 10 Got 2
+--- FAIL: TestPuzzle2 (0.00s)
+FAIL
+exit status 1
+FAIL	github.com/ufJmacca/advent2023/day-10	0.004s

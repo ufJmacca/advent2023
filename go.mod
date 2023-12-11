@@ -14,10 +14,12 @@ require (
 	github.com/golang/groupcache v0.0.0-20210331224755-41bb18bfe9da // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/kennygrant/sanitize v1.2.4 // indirect
+	github.com/peterstace/simplefeatures v0.46.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d // indirect
 	github.com/spatialcurrent/go-math v0.0.0-20211120210754-b3872f7000fe // indirect
 	github.com/temoto/robotstxt v1.1.2 // indirect
+	github.com/twpayne/go-geom v1.5.3 // indirect
 	golang.org/x/net v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	gonum.org/v1/gonum v0.9.1 // indirect
