@@ -1,6 +1,9 @@
 package main
 
-import "container/list"
+import (
+	"container/list"
+	"strings"
+)
 
 type coords struct {
 	x int
@@ -101,6 +104,45 @@ func ShortestPath(grid [][]string, start coords, end coords) int {
 }
 
 func Puzzle1(input string) int {
+	lines := strings.Split(input, "\n")
 
-	return 0
+	var grid [][]string
+
+	for _, line := range lines {
+		if len(line) > 0 {
+			elements := strings.Split(line, "")
+			grid = append(grid, elements)
+		}
+	}
+
+	expanded_grid := GridExpansion(grid)
+
+	rows, cols := len(expanded_grid), len(expanded_grid[0])
+	galaxy_distance := make(map[[2]int]int)
+	var galaxies []coords
+
+	for x := 0; x < rows; x++ {
+		for y := 0; y < cols; y++ {
+			if expanded_grid[x][y] == "#" {
+				galaxies = append(galaxies, coords{x, y})
+			}
+		}
+	}
+
+	for i, galaxy_1 := range galaxies {
+		for j, galaxy_2 := range galaxies {
+			if galaxy_1 == galaxy_2 {
+				continue
+			} else {
+				galaxy_distance[[2]int{i, j}] = ShortestPath(expanded_grid, galaxy_1, galaxy_2)
+			}
+		}
+	}
+
+	sum := 0
+	for _, distance := range galaxy_distance {
+		sum += distance
+	}
+
+	return sum / 2
 }
