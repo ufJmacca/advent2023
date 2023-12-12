@@ -133,8 +133,7 @@ L--J.L7...LJS7F-7L7.
 .....|FJLJ|FJ|F7|.LJ
 ....FJL-7.||.||||...
 ....L---J.LJ.LJLJ...`, 8},
-		{`
-FF7FSF7F7F7F7F7F---7
+		{`FF7FSF7F7F7F7F7F---7
 L|LJ||||||||||||F--J
 FL-7LJLJ||||||LJL-77
 F--JF--7||LJLJ7F7FJ-

@@ -7,13 +7,15 @@ import (
 )
 
 type puzzle_input_1 struct {
-	input  string
-	result int
+	input      string
+	empty_rows int
+	result     int
 }
 
 type grid_expansion struct {
-	input  [][]string
-	result [][]string
+	input      [][]string
+	empty_rows int
+	result     [][]string
 }
 
 type shortest_path struct {
@@ -34,11 +36,11 @@ func TestPuzzle1(t *testing.T) {
 .........#
 ..........
 .......#..
-#...#.....`, 374},
+#...#.....`, 1, 374},
 	}
 
 	for _, datum := range test_data {
-		result := Puzzle1(datum.input)
+		result := Puzzle1(datum.input, datum.empty_rows)
 
 		if result != datum.result {
 			t.Errorf("Puzzle1(%s) FAILED - Expected %d Got %d\n", datum.input, datum.result, result)
@@ -61,7 +63,7 @@ func TestGridExpansion(t *testing.T) {
 			{".", ".", ".", ".", ".", ".", ".", ".", ".", "."},
 			{".", ".", ".", ".", ".", ".", ".", "#", ".", "."},
 			{"#", ".", ".", ".", "#", ".", ".", ".", ".", "."},
-		}, [][]string{
+		}, 1, [][]string{
 			{".", ".", ".", ".", "#", ".", ".", ".", ".", ".", ".", ".", "."},
 			{".", ".", ".", ".", ".", ".", ".", ".", ".", "#", ".", ".", "."},
 			{"#", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", ".", "."},
@@ -78,12 +80,12 @@ func TestGridExpansion(t *testing.T) {
 	}
 
 	for _, datum := range test_data {
-		result := GridExpansion(datum.input)
+		result := GridExpansion(datum.input, datum.empty_rows)
 
 		if !IsEqual(result, datum.result) {
-			t.Errorf("GridExpansion(%s) FAILED - Expected %s Got %s\n", datum.input, datum.result, result)
+			t.Errorf("GridExpansion(%s, %d) FAILED - Expected %s Got %s\n", datum.input, datum.empty_rows, datum.result, result)
 		} else {
-			t.Logf("GridExpansion(%s) PASSED", datum.input)
+			t.Logf("GridExpansion(%s, %d) PASSED", datum.input, datum.empty_rows)
 		}
 	}
 }
@@ -156,4 +158,47 @@ func IsEqual(a [][]string, b [][]string) bool {
 		}
 	}
 	return true
+}
+
+func TestPuzzle2(t *testing.T) {
+	test_data := []puzzle_input_1{
+		{`...#......
+.......#..
+#.........
+..........
+......#...
+.#........
+.........#
+..........
+.......#..
+#...#.....`, 2, 374}, {`...#......
+.......#..
+#.........
+..........
+......#...
+.#........
+.........#
+..........
+.......#..
+#...#.....`, 10, 1030}, {`...#......
+.......#..
+#.........
+..........
+......#...
+.#........
+.........#
+..........
+.......#..
+#...#.....`, 100, 8410},
+	}
+
+	for _, datum := range test_data {
+		result := Puzzle2(datum.input, datum.empty_rows)
+
+		if result != datum.result {
+			t.Errorf("Puzzle2(%s, %d) FAILED - Expected %d Got %d\n", datum.input, datum.empty_rows, datum.result, result)
+		} else {
+			t.Logf("Puzzle1(%s, %d) PASSED", datum.input, datum.empty_rows)
+		}
+	}
 }
