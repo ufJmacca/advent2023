@@ -1,6 +1,7 @@
 package main
 
 import (
+	"strconv"
 	"strings"
 )
 
@@ -42,6 +43,22 @@ func ArrangementCounter(records string, conditions []int) int {
 }
 
 func Puzzle1(input string) int {
+	lines := strings.Split(input, "\n")
 
-	return 0
+	total := 0
+
+	for _, line := range lines {
+		if len(line) > 0 {
+			elements := strings.Split(line, " ")
+			var conditions []int
+			for _, condition := range strings.Split(elements[1], ",") {
+				c1, _ := strconv.Atoi(condition)
+				conditions = append(conditions, c1)
+			}
+
+			total += ArrangementCounter(elements[0], conditions)
+		}
+	}
+
+	return total
 }
