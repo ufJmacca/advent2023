@@ -48,9 +48,9 @@ func TestArrangementCounter(t *testing.T) {
 		result := ArrangementCounter(datum.records, datum.conditions)
 
 		if result != datum.result {
-			t.Errorf("Puzzle1(%s, %s) FAILED - Expected %d Got %d\n", datum.records, datum.conditions, datum.result, result)
+			t.Errorf("Puzzle1(%s, %v) FAILED - Expected %d Got %d\n", datum.records, datum.conditions, datum.result, result)
 		} else {
-			t.Logf("Puzzle1(%s, %s) PASSED", datum.records, datum.conditions)
+			t.Logf("Puzzle1(%s, %v) PASSED", datum.records, datum.conditions)
 		}
 	}
 }
