@@ -67,6 +67,35 @@ func Puzzle1(input string) int {
 	return total
 }
 
+func Puzzle2(input string) int {
+	lines := strings.Split(input, "\n")
+
+	total := 0
+
+	for _, line := range lines {
+		if len(line) > 0 {
+			elements := strings.Split(line, " ")
+			var conditions []int
+			for _, condition := range strings.Split(elements[1], ",") {
+				c1, _ := strconv.Atoi(condition)
+				conditions = append(conditions, c1)
+			}
+
+			count_input := strings.Join([]string{strings.Repeat(elements[0]+"?", 5)}, "")
+
+			appended := make([]int, len(conditions))
+			copy(appended, conditions)
+			for i := 0; i < 4; i++ {
+				appended = append(appended, conditions...)
+			}
+
+			total += ArrangementCounter(count_input[:len(count_input)-1], appended)
+		}
+	}
+
+	return total
+}
+
 func main() {
 	c := colly.NewCollector()
 
