@@ -129,6 +129,7 @@ func main() {
 
 		puzzle_2 := Puzzle2(inputs)
 		fmt.Println(puzzle_2)
+
 	})
 
 	c.Visit("https://adventofcode.com/2023/day/12/input")
