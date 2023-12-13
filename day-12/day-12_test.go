@@ -54,3 +54,24 @@ func TestArrangementCounter(t *testing.T) {
 		}
 	}
 }
+
+func TestPuzzle2(t *testing.T) {
+	test_data := []puzzle_input_1{
+		{`???.### 1,1,3
+.??..??...?##. 1,1,3
+?#?#?#?#?#?#?#? 1,3,1,6
+????.#...#... 4,1,1
+????.######..#####. 1,6,5
+?###???????? 3,2,1`, 525152},
+	}
+
+	for _, datum := range test_data {
+		result := Puzzle1(datum.input)
+
+		if result != datum.result {
+			t.Errorf("Puzzle1(%s) FAILED - Expected %d Got %d\n", datum.input, datum.result, result)
+		} else {
+			t.Logf("Puzzle1(%s) PASSED", datum.input)
+		}
+	}
+}
