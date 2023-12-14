@@ -2,6 +2,7 @@ package main
 
 import (
 	"reflect"
+	"strings"
 )
 
 func Transpose(grid [][]string) [][]string {
@@ -53,7 +54,7 @@ func MirrorDetection(grid [][]string) int {
 		grid_1 := ReverseArray(copied)
 		grid_2 := grid[i:]
 		if IsMirror(grid_1, grid_2) {
-			return (i + 1) * 100
+			return i * 100
 		}
 	}
 
@@ -74,6 +75,18 @@ func MirrorDetection(grid [][]string) int {
 }
 
 func Puzzle1(input string) int {
+	mirror_grids := strings.Split(input, "\n\n")
 
-	return 0
+	sum := 0
+
+	for _, mirror_grid := range mirror_grids {
+		var grid [][]string
+		for _, line := range strings.Split(mirror_grid, "\n") {
+			elements := strings.Split(line, "")
+			grid = append(grid, elements)
+		}
+		sum += MirrorDetection(grid)
+	}
+
+	return sum
 }
