@@ -78,6 +78,53 @@ func MirrorDetection(grid [][]string) int {
 	return 0
 }
 
+func IsSmudgedMirror(grid_1 [][]string, grid_2 [][]string) bool {
+	size := min(len(grid_1), len(grid_2))
+
+	difference_count := 0
+	for i := range grid_1[:size] {
+		for j := range grid_1[i] {
+			if grid_1[i][j] != grid_2[i][j] {
+				difference_count++
+			}
+		}
+		if difference_count == 1 {
+			return true
+		}
+	}
+
+	return false
+}
+
+func SmudgedMirrorDetection(grid [][]string) int {
+	size := len(grid)
+
+	for i := 1; i < size; i++ {
+		copied := make([][]string, len(grid[:i]))
+		copy(copied, grid[:i])
+		grid_1 := ReverseArray(copied)
+		grid_2 := grid[i:]
+		if IsSmudgedMirror(grid_1, grid_2) {
+			return i * 100
+		}
+	}
+
+	grid = Transpose(grid)
+	size = len(grid)
+
+	for i := 1; i < size; i++ {
+		copied := make([][]string, len(grid[:i]))
+		copy(copied, grid[:i])
+		grid_1 := ReverseArray(copied)
+		grid_2 := grid[i:]
+		if IsSmudgedMirror(grid_1, grid_2) {
+			return i
+		}
+	}
+
+	return 0
+}
+
 func Puzzle1(input string) int {
 	mirror_grids := strings.Split(input, "\n\n")
 
