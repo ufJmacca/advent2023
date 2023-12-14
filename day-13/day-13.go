@@ -144,6 +144,25 @@ func Puzzle1(input string) int {
 	return sum
 }
 
+func Puzzle2(input string) int {
+	mirror_grids := strings.Split(input, "\n\n")
+
+	sum := 0
+
+	for _, mirror_grid := range mirror_grids {
+		var grid [][]string
+		for _, line := range strings.Split(mirror_grid, "\n") {
+			if len(line) > 0 {
+				elements := strings.Split(line, "")
+				grid = append(grid, elements)
+			}
+		}
+		sum += SmudgedMirrorDetection(grid)
+	}
+
+	return sum
+}
+
 func main() {
 	c := colly.NewCollector()
 

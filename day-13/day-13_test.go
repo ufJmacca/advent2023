@@ -107,3 +107,33 @@ func TestSmudgedMirrorDetection(t *testing.T) {
 		}
 	}
 }
+
+func TestPuzzle2(t *testing.T) {
+	test_data := []puzzle_input_1{
+		{`#.##..##.
+..#.##.#.
+##......#
+##......#
+..#.##.#.
+..##..##.
+#.#.##.#.
+
+#...##..#
+#....#..#
+..##..###
+#####.##.
+#####.##.
+..##..###
+#....#..#`, 400},
+	}
+
+	for _, datum := range test_data {
+		result := Puzzle2(datum.input)
+
+		if result != datum.result {
+			t.Errorf("Puzzle2(%s) FAILED - Expected %d Got %d\n", datum.input, datum.result, result)
+		} else {
+			t.Logf("Puzzle2(%s) PASSED", datum.input)
+		}
+	}
+}
