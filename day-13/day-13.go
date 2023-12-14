@@ -88,12 +88,8 @@ func IsSmudgedMirror(grid_1 [][]string, grid_2 [][]string) bool {
 				difference_count++
 			}
 		}
-		if difference_count == 1 {
-			return true
-		}
 	}
-
-	return false
+	return difference_count == 1
 }
 
 func SmudgedMirrorDetection(grid [][]string) int {
@@ -104,6 +100,7 @@ func SmudgedMirrorDetection(grid [][]string) int {
 		copy(copied, grid[:i])
 		grid_1 := ReverseArray(copied)
 		grid_2 := grid[i:]
+
 		if IsSmudgedMirror(grid_1, grid_2) {
 			return i * 100
 		}
@@ -158,6 +155,7 @@ func Puzzle2(input string) int {
 			}
 		}
 		sum += SmudgedMirrorDetection(grid)
+
 	}
 
 	return sum
@@ -177,8 +175,8 @@ func main() {
 		puzzle_1 := Puzzle1(inputs)
 		fmt.Println(puzzle_1)
 
-		// puzzle_2 := Puzzle2(inputs, 1000000)
-		// fmt.Println(puzzle_2)
+		puzzle_2 := Puzzle2(inputs)
+		fmt.Println(puzzle_2)
 	})
 
 	c.Visit("https://adventofcode.com/2023/day/13/input")
