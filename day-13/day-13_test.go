@@ -74,3 +74,36 @@ func TestMirrorDetection(t *testing.T) {
 		}
 	}
 }
+
+func TestSmudgedMirrorDetection(t *testing.T) {
+	test_data := []mirrow_detection{
+		{[][]string{
+			{`#`, `.`, `#`, `#`, `.`, `.`, `#`, `#`, `.`},
+			{`.`, `.`, `#`, `.`, `#`, `#`, `.`, `#`, `.`},
+			{`#`, `#`, `.`, `.`, `.`, `.`, `.`, `.`, `#`},
+			{`#`, `#`, `.`, `.`, `.`, `.`, `.`, `.`, `#`},
+			{`.`, `.`, `#`, `.`, `#`, `#`, `.`, `#`, `.`},
+			{`.`, `.`, `#`, `#`, `.`, `.`, `#`, `#`, `.`},
+			{`#`, `.`, `#`, `.`, `#`, `#`, `.`, `#`, `.`},
+		}, 300},
+		{[][]string{
+			{`#`, `.`, `.`, `.`, `#`, `#`, `.`, `.`, `#`},
+			{`#`, `.`, `.`, `.`, `.`, `#`, `.`, `.`, `#`},
+			{`.`, `.`, `#`, `#`, `.`, `.`, `#`, `#`, `#`},
+			{`#`, `#`, `#`, `#`, `#`, `.`, `#`, `#`, `.`},
+			{`#`, `#`, `#`, `#`, `#`, `.`, `#`, `#`, `.`},
+			{`.`, `.`, `#`, `#`, `.`, `.`, `#`, `#`, `#`},
+			{`#`, `.`, `.`, `.`, `.`, `#`, `.`, `.`, `#`},
+		}, 100},
+	}
+
+	for _, datum := range test_data {
+		result := SmudgedMirrorDetection(datum.input)
+
+		if result != datum.result {
+			t.Errorf("SmudgedMirrorDetection(%s) FAILED - Expected %d Got %d\n", datum.input, datum.result, result)
+		} else {
+			t.Logf("SmudgedMirrorDetection(%s) PASSED", datum.input)
+		}
+	}
+}
