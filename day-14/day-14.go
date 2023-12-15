@@ -2,6 +2,7 @@ package main
 
 import (
 	"sort"
+	"strings"
 )
 
 func Transpose(grid [][]string) [][]string {
@@ -90,5 +91,31 @@ func NorthTilt(input [][]string) [][]string {
 }
 
 func Puzzle1(input string) int {
-	return 0
+	lines := strings.Split(input, "\n")
+
+	var grid [][]string
+
+	for _, line := range lines {
+		if len(line) > 0 {
+			elements := strings.Split(line, "")
+			grid = append(grid, elements)
+		}
+	}
+
+	tilted_grid := NorthTilt(grid)
+	grid_row := len(tilted_grid)
+	total_load := 0
+
+	for i, row := range tilted_grid {
+		count := 0
+		for _, str := range row {
+			if str == `O` {
+				count++
+			}
+		}
+
+		total_load += count * (grid_row - i)
+	}
+
+	return total_load
 }
