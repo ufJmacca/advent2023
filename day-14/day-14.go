@@ -1,8 +1,12 @@
 package main
 
 import (
+	"fmt"
+	"os"
 	"sort"
 	"strings"
+
+	"github.com/gocolly/colly"
 )
 
 func Transpose(grid [][]string) [][]string {
@@ -118,4 +122,30 @@ func Puzzle1(input string) int {
 	}
 
 	return total_load
+}
+
+func Puzzle2(input string) int {
+
+	return 0
+}
+
+func main() {
+	c := colly.NewCollector()
+
+	// Sets cookie from environment variable
+	c.OnRequest(func(r *colly.Request) {
+		r.Headers.Set("cookie", os.Getenv("COOKIE"))
+	})
+
+	c.OnResponse(func(r *colly.Response) {
+		inputs := string(r.Body)
+
+		puzzle_1 := Puzzle1(inputs)
+		fmt.Println(puzzle_1)
+
+		// puzzle_2 := Puzzle2(inputs)
+		// fmt.Println(puzzle_2)
+	})
+
+	c.Visit("https://adventofcode.com/2023/day/14/input")
 }
