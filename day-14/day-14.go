@@ -260,22 +260,15 @@ func Puzzle2(input string, cycles int) int {
 	ordered_map := orderedmap.New()
 	var loop_start string
 
-	fmt.Println("starting tilt cycle")
-
 	for i := 0; i < cycles; i++ {
 		tilted_grid = TiltCycle(tilted_grid)
 		key := StringifyGrid(tilted_grid)
-		fmt.Println(i)
 		if _, ok := ordered_map.Get(key); ok {
-			fmt.Println("next rotation")
 			loop_start = key
-			fmt.Println(loop_start)
 			break
 		}
 		ordered_map.Set(key, true)
 	}
-
-	fmt.Println(ordered_map)
 
 	loop_start_i := 0
 	for pair := ordered_map.Oldest(); pair != nil; pair = pair.Next() {
@@ -284,18 +277,14 @@ func Puzzle2(input string, cycles int) int {
 			break
 		}
 	}
-	fmt.Println(loop_start_i)
 
 	loop_end_i := 0
 	for pair := ordered_map.Oldest(); pair != nil; pair = pair.Next() {
 		loop_end_i++
 	}
-	fmt.Println(loop_end_i)
 
 	cycles_left := cycles - (loop_start_i)
-	fmt.Println(cycles_left)
 	modulo := cycles_left % ((loop_end_i - loop_start_i) + 1)
-	fmt.Println(modulo)
 
 	i := 0
 	var final_grid [][]string
@@ -303,9 +292,6 @@ func Puzzle2(input string, cycles int) int {
 		i++
 		if i == modulo+loop_start_i {
 			final := pair.Key.(string)
-			fmt.Println("set titled_grid")
-			// tilted_grid = final
-			fmt.Println(final)
 			rows := strings.Split(strings.Trim(final[2:len(final)-2], " "), "] [")
 
 			for _, row := range rows {
@@ -315,9 +301,6 @@ func Puzzle2(input string, cycles int) int {
 			}
 		}
 	}
-
-	fmt.Println()
-	fmt.Println(final_grid)
 
 	total_load := 0
 
@@ -330,9 +313,7 @@ func Puzzle2(input string, cycles int) int {
 		}
 
 		total_load += count * (grid_row - i)
-		fmt.Println(final_grid[i])
 	}
-	fmt.Println()
 
 	return total_load
 }
@@ -351,8 +332,8 @@ func main() {
 		puzzle_1 := Puzzle1(inputs)
 		fmt.Println(puzzle_1)
 
-		// puzzle_2 := Puzzle2(inputs, 1000000000)
-		// fmt.Println(puzzle_2)
+		puzzle_2 := Puzzle2(inputs, 1000000000)
+		fmt.Println(puzzle_2)
 	})
 
 	c.Visit("https://adventofcode.com/2023/day/14/input")
