@@ -1,5 +1,7 @@
 package main
 
+import "strings"
+
 func Hash(input string) int {
 	current_value := 0
 
@@ -11,6 +13,15 @@ func Hash(input string) int {
 }
 
 func Puzzle1(input string) int {
+	lines := strings.Split(input, ",")
 
-	return 0
+	var sum int
+
+	for _, line := range lines {
+		if len(line) > 0 {
+			sum += Hash(line)
+		}
+	}
+
+	return sum
 }
