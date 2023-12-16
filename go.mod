@@ -20,6 +20,7 @@ require (
 	github.com/spatialcurrent/go-math v0.0.0-20211120210754-b3872f7000fe // indirect
 	github.com/temoto/robotstxt v1.1.2 // indirect
 	github.com/twpayne/go-geom v1.5.3 // indirect
+	github.com/wk8/go-ordered-map v1.0.0 // indirect
 	golang.org/x/net v0.19.0 // indirect
 	golang.org/x/text v0.14.0 // indirect
 	gonum.org/v1/gonum v0.9.1 // indirect

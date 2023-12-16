@@ -107,7 +107,7 @@ O.#..O.#.#
 	}
 
 	for _, datum := range test_data {
-		result := Puzzle2(datum.input)
+		result := Puzzle2(datum.input, 1000000000)
 
 		if result != datum.result {
 			t.Errorf("Puzzle2(%s) FAILED - Expected %d Got %d\n", datum.input, datum.result, result)
