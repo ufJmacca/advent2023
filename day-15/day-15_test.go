@@ -29,7 +29,7 @@ func TestPuzzle1(t *testing.T) {
 }
 
 func TestHash(t *testing.T) {
-	test_data := []puzzle_input_1{
+	test_data := []hash_input{
 		{`rn=1`, 30},
 		{`cm-`, 253},
 		{`qp=3`, 97},
@@ -50,6 +50,22 @@ func TestHash(t *testing.T) {
 			t.Errorf("Hash(%s) FAILED - Expected %d Got %d\n", datum.input, datum.result, result)
 		} else {
 			t.Logf("Hash(%s) PASSED", datum.input)
+		}
+	}
+}
+
+func TestPuzzle2(t *testing.T) {
+	test_data := []puzzle_input_1{
+		{`rn=1,cm-,qp=3,cm=2,qp-,pc=4,ot=9,ab=5,pc-,pc=6,ot=7`, 145},
+	}
+
+	for _, datum := range test_data {
+		result := Puzzle2(datum.input)
+
+		if result != datum.result {
+			t.Errorf("Puzzle2(%s) FAILED - Expected %d Got %d\n", datum.input, datum.result, result)
+		} else {
+			t.Logf("Puzzle2(%s) PASSED", datum.input)
 		}
 	}
 }
