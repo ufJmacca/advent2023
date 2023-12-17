@@ -3,8 +3,11 @@ package main
 import (
 	"container/heap"
 	"fmt"
+	"os"
 	"strconv"
 	"strings"
+
+	"github.com/gocolly/colly"
 )
 
 type Step struct {
@@ -108,7 +111,6 @@ func Puzzle1(input string) int {
 
 	for pq.Len() > 0 {
 		step := heap.Pop(&pq).(*Step)
-		fmt.Printf("hl: %d, cell: (%d, %d), next direction: (%d, %d), step: %d\n", step.heatloss, step.row, step.col, step.next_row, step.next_col, step.steps_in_direction)
 
 		if step.row == grid_rows-1 && step.col == grid_cols-1 {
 			return step.heatloss
@@ -122,7 +124,6 @@ func Puzzle1(input string) int {
 			steps_in_direction: step.steps_in_direction,
 		}
 		if previous_steps.Contains(current_step) {
-			fmt.Println("skip already seen value")
 			continue
 		}
 		previous_steps.Add(current_step)
@@ -131,8 +132,6 @@ func Puzzle1(input string) int {
 			possible_row := step.row + step.next_row
 			possible_col := step.col + step.next_col
 			if possible_row >= 0 && possible_row < grid_rows && possible_col >= 0 && possible_col < grid_cols {
-				fmt.Println("Continue in direction of Traval")
-				fmt.Printf("PUSHED - hl: %d, cell: (%d, %d), next direction: (%d, %d), step: %d\n", step.heatloss+grid[possible_row][possible_col], possible_row, possible_col, step.next_row, step.next_col, step.steps_in_direction+1)
 				heap.Push(&pq, &Step{
 					heatloss:           step.heatloss + grid[possible_row][possible_col],
 					row:                possible_row,
@@ -156,7 +155,6 @@ func Puzzle1(input string) int {
 				possible_row := step.row + possible_next[0]
 				possible_col := step.col + possible_next[1]
 				if possible_row >= 0 && possible_row < grid_rows && possible_col >= 0 && possible_col < grid_cols {
-					fmt.Printf("PUSHED - hl: %d, cell: (%d, %d), next direction: (%d, %d), step: %d\n", step.heatloss+grid[possible_row][possible_col], possible_row, possible_col, possible_next[0], possible_next[1], 1)
 					heap.Push(&pq, &Step{
 						heatloss:           step.heatloss + grid[possible_row][possible_col],
 						row:                possible_row,
@@ -170,4 +168,128 @@ func Puzzle1(input string) int {
 		}
 	}
 	return 0
+}
+
+func Puzzle2(input string) int {
+	lines := strings.Split(input, "\n")
+
+	var grid [][]int
+
+	for _, line := range lines {
+		if len(line) > 0 {
+			elements := strings.Split(line, "")
+			var int_slice []int
+			for _, element := range elements {
+				int_val, _ := strconv.Atoi(element)
+				int_slice = append(int_slice, int_val)
+			}
+			grid = append(grid, int_slice)
+		}
+	}
+
+	grid_rows := len(grid)
+	grid_cols := len(grid[0])
+
+	pq := make(PriorityQueue, 1)
+	previous_steps := make(Set)
+
+	pq[0] = &Step{
+		heatloss:           0,
+		row:                0,
+		col:                0,
+		next_row:           0,
+		next_col:           0,
+		steps_in_direction: 0,
+	}
+
+	heap.Init(&pq)
+
+	for pq.Len() > 0 {
+		step := heap.Pop(&pq).(*Step)
+		fmt.Printf("hl: %d, cell: (%d, %d), next direction: (%d, %d), step: %d\n", step.heatloss, step.row, step.col, step.next_row, step.next_col, step.steps_in_direction)
+
+		if step.row == grid_rows-1 && step.col == grid_cols-1 && step.steps_in_direction >= 4 {
+			return step.heatloss
+		}
+
+		current_step := PreviousSteps{
+			row:                step.row,
+			col:                step.col,
+			next_row:           step.next_row,
+			next_col:           step.next_col,
+			steps_in_direction: step.steps_in_direction,
+		}
+		if previous_steps.Contains(current_step) {
+			fmt.Println("skip already seen value")
+			continue
+		}
+		previous_steps.Add(current_step)
+
+		if step.steps_in_direction < 10 && !(step.next_row == 0 && step.next_col == 0) {
+			possible_row := step.row + step.next_row
+			possible_col := step.col + step.next_col
+			if possible_row >= 0 && possible_row < grid_rows && possible_col >= 0 && possible_col < grid_cols {
+				fmt.Println("Continue in direction of Traval")
+				fmt.Printf("PUSHED - hl: %d, cell: (%d, %d), next direction: (%d, %d), step: %d\n", step.heatloss+grid[possible_row][possible_col], possible_row, possible_col, step.next_row, step.next_col, step.steps_in_direction+1)
+				heap.Push(&pq, &Step{
+					heatloss:           step.heatloss + grid[possible_row][possible_col],
+					row:                possible_row,
+					col:                possible_col,
+					next_row:           step.next_row,
+					next_col:           step.next_col,
+					steps_in_direction: step.steps_in_direction + 1,
+				})
+			}
+		}
+
+		possible_next_directions := [][]int{
+			{0, 1},
+			{0, -1},
+			{1, 0},
+			{-1, 0},
+		}
+
+		if step.steps_in_direction >= 4 || (step.next_row == 0 && step.next_col == 0) {
+			for _, possible_next := range possible_next_directions {
+				if !(possible_next[0] == step.next_row && possible_next[1] == step.next_col) && !(possible_next[0] == step.next_row*-1 && possible_next[1] == step.next_col*-1) {
+					possible_row := step.row + possible_next[0]
+					possible_col := step.col + possible_next[1]
+					if possible_row >= 0 && possible_row < grid_rows && possible_col >= 0 && possible_col < grid_cols {
+						fmt.Printf("PUSHED - hl: %d, cell: (%d, %d), next direction: (%d, %d), step: %d\n", step.heatloss+grid[possible_row][possible_col], possible_row, possible_col, possible_next[0], possible_next[1], 1)
+						heap.Push(&pq, &Step{
+							heatloss:           step.heatloss + grid[possible_row][possible_col],
+							row:                possible_row,
+							col:                possible_col,
+							next_row:           possible_next[0],
+							next_col:           possible_next[1],
+							steps_in_direction: 1,
+						})
+					}
+				}
+			}
+		}
+	}
+	return 0
+}
+
+func main() {
+	c := colly.NewCollector()
+
+	// Sets cookie from environment variable
+	c.OnRequest(func(r *colly.Request) {
+		r.Headers.Set("cookie", os.Getenv("COOKIE"))
+	})
+
+	c.OnResponse(func(r *colly.Response) {
+		inputs := string(r.Body)
+
+		puzzle_1 := Puzzle1(inputs)
+		fmt.Println(puzzle_1)
+
+		// puzzle_2 := Puzzle2(inputs)
+		// fmt.Println(puzzle_2)
+
+	})
+
+	c.Visit("https://adventofcode.com/2023/day/17/input")
 }
