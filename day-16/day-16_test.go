@@ -49,7 +49,7 @@ func TestPuzzle2(t *testing.T) {
 ..../.\\..
 .-.-/..|..
 .|....-|.\
-..//.|....`, 51},
+..//.|....`, 54},
 	}
 
 	for _, datum := range test_data {

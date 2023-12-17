@@ -171,7 +171,6 @@ func SovleForBeam(grid [][]grid_element, start beam) int {
 		for _, col := range row {
 			if col.energised {
 				count++
-			} else {
 			}
 		}
 	}
@@ -218,7 +217,45 @@ func Puzzle2(input string) int {
 		}
 	}
 
-	return 0
+	max_energised := 0
+
+	rows := len(grid)
+	cols := len(grid[0])
+
+	// x == rows-1 && y == cols-1
+
+	for x := range grid {
+		for y := range grid {
+			copied_grid := make([][]grid_element, rows)
+			for i := range grid {
+				copied_grid[i] = make([]grid_element, cols)
+				copy(copied_grid[i], grid[i])
+			}
+			if x == 0 && y == 0 {
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "east", current_cell: []int{x, y}}))
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "south", current_cell: []int{x, y}}))
+			} else if x == 0 && y == cols-1 {
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "west", current_cell: []int{x, y}}))
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "south", current_cell: []int{x, y}}))
+			} else if x == rows-1 && y == 0 {
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "east", current_cell: []int{x, y}}))
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "north", current_cell: []int{x, y}}))
+			} else if x == rows-1 && y == cols-1 {
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "west", current_cell: []int{x, y}}))
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "north", current_cell: []int{x, y}}))
+			} else if x == 0 {
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "south", current_cell: []int{x, y}}))
+			} else if x == rows-1 {
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "north", current_cell: []int{x, y}}))
+			} else if y == 0 {
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "east", current_cell: []int{x, y}}))
+			} else if y == cols-1 {
+				max_energised = max(max_energised, SovleForBeam(copied_grid, beam{direction: "west", current_cell: []int{x, y}}))
+			}
+		}
+	}
+
+	return max_energised
 }
 
 func main() {
@@ -235,8 +272,8 @@ func main() {
 		puzzle_1 := Puzzle1(inputs, beam{direction: "south", current_cell: []int{0, 0}})
 		fmt.Println(puzzle_1)
 
-		// puzzle_2 := Puzzle2(inputs)
-		// fmt.Println(puzzle_2)
+		puzzle_2 := Puzzle2(inputs)
+		fmt.Println(puzzle_2)
 	})
 
 	c.Visit("https://adventofcode.com/2023/day/16/input")
