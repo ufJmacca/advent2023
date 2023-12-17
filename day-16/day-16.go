@@ -154,7 +154,32 @@ func NextStep(input_beam beam, grid [][]grid_element, rows int, cols int) []beam
 	}
 }
 
-func Puzzle1(input string) int {
+func SovleForBeam(grid [][]grid_element, start beam) int {
+	var beams []beam
+	rows := len(grid)
+	cols := len(grid[0])
+
+	beams = append(beams, start)
+
+	for len(beams) > 0 {
+		next_step := NextStep(beams[0], grid, rows, cols)
+		beams = append(beams[1:], next_step...)
+	}
+
+	count := 0
+	for _, row := range grid {
+		for _, col := range row {
+			if col.energised {
+				count++
+			} else {
+			}
+		}
+	}
+
+	return count
+}
+
+func Puzzle1(input string, start beam) int {
 	lines := strings.Split(input, "\n")
 
 	var grid [][]grid_element
@@ -172,35 +197,28 @@ func Puzzle1(input string) int {
 		}
 	}
 
-	var beams []beam
-	rows := len(grid)
-	cols := len(grid[0])
+	return SovleForBeam(grid, start)
+}
 
-	if strings.Contains("\\|", grid[0][0].value) {
-		beams = append(beams, beam{direction: "south", current_cell: []int{0, 0}})
-	} else {
-		beams = append(beams, beam{direction: "east", current_cell: []int{0, 0}})
-	}
+func Puzzle2(input string) int {
+	lines := strings.Split(input, "\n")
 
-	for len(beams) > 0 {
-		next_step := NextStep(beams[0], grid, rows, cols)
-		beams = append(beams[1:], next_step...)
-	}
+	var grid [][]grid_element
 
-	count := 0
-	for _, row := range grid {
-		for _, col := range row {
-			if col.energised {
-				count++
-				// fmt.Printf("#")
-			} else {
-				// fmt.Printf(".")
+	for _, line := range lines {
+		if len(line) > 0 {
+			elements := strings.Split(line, "")
+
+			var row []grid_element
+
+			for _, element := range elements {
+				row = append(row, grid_element{value: element, energised: false, visits: 0})
 			}
+			grid = append(grid, row)
 		}
-		// fmt.Printf("\n")
 	}
 
-	return count
+	return 0
 }
 
 func main() {
@@ -214,7 +232,7 @@ func main() {
 	c.OnResponse(func(r *colly.Response) {
 		inputs := string(r.Body)
 
-		puzzle_1 := Puzzle1(inputs)
+		puzzle_1 := Puzzle1(inputs, beam{direction: "south", current_cell: []int{0, 0}})
 		fmt.Println(puzzle_1)
 
 		// puzzle_2 := Puzzle2(inputs)
