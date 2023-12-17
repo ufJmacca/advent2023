@@ -71,9 +71,7 @@ func Puzzle2(input string) int {
 						exists = true
 						queue.focal_length = focal_length
 
-						queue_before := hashmap[box][:i]
-						queue_after := hashmap[box][i+1:]
-						hashmap[box] = append(append([]map_struct{{id, focal_length}}, queue_before...), queue_after...)
+						hashmap[box][i].focal_length = focal_length
 					}
 				}
 				if !exists {
@@ -106,8 +104,8 @@ func main() {
 		puzzle_1 := Puzzle1(inputs)
 		fmt.Println(puzzle_1)
 
-		// puzzle_2 := Puzzle2(inputs, 1000000000)
-		// fmt.Println(puzzle_2)
+		puzzle_2 := Puzzle2(inputs)
+		fmt.Println(puzzle_2)
 	})
 
 	c.Visit("https://adventofcode.com/2023/day/15/input")
