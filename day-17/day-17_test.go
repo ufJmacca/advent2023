@@ -34,3 +34,36 @@ func TestPuzzle1(t *testing.T) {
 		}
 	}
 }
+
+func TestPuzzle2(t *testing.T) {
+	test_data := []puzzle_input_1{
+		{`2413432311323
+3215453535623
+3255245654254
+3446585845452
+4546657867536
+1438598798454
+4457876987766
+3637877979653
+4654967986887
+4564679986453
+1224686865563
+2546548887735
+4322674655533`, 94},
+		{`111111111111
+999999999991
+999999999991
+999999999991
+999999999991`, 71},
+	}
+
+	for _, datum := range test_data {
+		result := Puzzle2(datum.input)
+
+		if result != datum.result {
+			t.Errorf("Puzzle2(%s) FAILED - Expected %d Got %d\n", datum.input, datum.result, result)
+		} else {
+			t.Logf("Puzzle2(%s) PASSED", datum.input)
+		}
+	}
+}
