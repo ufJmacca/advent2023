@@ -20,10 +20,10 @@ type beam struct {
 }
 
 var next_cell = map[string][]int{
-	"east":  []int{0, 1},
-	"west":  []int{0, -1},
-	"north": []int{-1, 0},
-	"south": []int{1, 0},
+	"east":  {0, 1},
+	"west":  {0, -1},
+	"north": {-1, 0},
+	"south": {1, 0},
 }
 
 func NextStep(input_beam beam, grid [][]grid_element, rows int, cols int) []beam {
