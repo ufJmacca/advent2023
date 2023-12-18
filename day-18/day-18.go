@@ -11,18 +11,11 @@ import (
 	"github.com/peterstace/simplefeatures/geom"
 )
 
-type directions struct {
-	direction string
-	steps     int
-	colour    string
-}
-
 func Puzzle1(input string) int {
 	lines := strings.Split(input, "\n")
 	pattern := `(\w) (\d+) \((.*?)\)`
 	regex := regexp.MustCompile(pattern)
 
-	var dig_instructions []directions
 	var flat_sequence []float64
 
 	current_location := []float64{0, 0}
@@ -39,8 +32,6 @@ func Puzzle1(input string) int {
 			matches := regex.FindAllStringSubmatch(line, -1)
 			direction := matches[0][1]
 			steps, _ := strconv.Atoi(matches[0][2])
-			colour := matches[0][3]
-			dig_instructions = append(dig_instructions, directions{direction, steps, colour})
 
 			switch direction {
 			case "U":
@@ -67,6 +58,14 @@ func Puzzle1(input string) int {
 	polygon_lines = append(polygon_lines, geom.NewLineString(seq))
 
 	polygon := geom.NewPolygon(polygon_lines)
+
+	boundary_points := countBoundaryLatticePoints(seq)
+
+	interior := int(polygon.Area()) - (boundary_points / 2) + 1
+
+	fmt.Println(interior)
+	fmt.Println(boundary_points)
+
 	cnt := 0
 
 	for i := min_row; i < max_row; i++ {
@@ -98,9 +97,94 @@ func InstructionDecode(hexa string) (string, int) {
 	return direction, int(steps)
 }
 
-func Puzzle2(input string) int {
+func countBoundaryLatticePoints(polygon_lines geom.Sequence) int {
+	// Iterate through the line strings representing the edges of the polygon
+	boundaryPoints := 0
+	fmt.Println(polygon_lines.Length())
+	for i := 0; i < polygon_lines.Length()-1; i++ {
 
-	return 0
+		// Check each segment of the line string
+		// Count points with integer coordinates along the line segment
+		start_x := polygon_lines.Get(i).X
+		start_y := polygon_lines.Get(i).Y
+		end_x := polygon_lines.Get(i + 1).X
+		end_y := polygon_lines.Get(i + 1).Y
+
+		// Count lattice points along the line segment (using a simple count, not considering fractional points)
+		boundaryPoints += gcd(abs(int(end_x-start_x)), abs(int(end_y-start_y)))
+	}
+	return boundaryPoints
+}
+
+func gcd(a, b int) int {
+	for b != 0 {
+		a, b = b, a%b
+	}
+	return a
+}
+
+func abs(x int) int {
+	if x < 0 {
+		return -x
+	}
+	return x
+}
+
+func Puzzle2(input string) int {
+	lines := strings.Split(input, "\n")
+	pattern := `(\w) (\d+) \((.*?)\)`
+	regex := regexp.MustCompile(pattern)
+
+	var flat_sequence []float64
+
+	current_location := []float64{0, 0}
+
+	flat_sequence = append(flat_sequence, current_location...)
+
+	min_row := 0
+	max_row := 0
+	min_col := 0
+	max_col := 0
+
+	for _, line := range lines {
+		if len(line) > 0 {
+			matches := regex.FindAllStringSubmatch(line, -1)
+			direction, steps := InstructionDecode(matches[0][3])
+
+			switch direction {
+			case "U":
+				current_location[0] = current_location[0] + (float64(steps) * -1)
+			case "D":
+				current_location[0] = current_location[0] + float64(steps)
+			case "R":
+				current_location[1] = current_location[1] + float64(steps)
+			case "L":
+				current_location[1] = current_location[1] + (float64(steps) * -1)
+			}
+			min_row = min(min_row, int(current_location[0]))
+			max_row = max(max_row, int(current_location[0]))
+			min_col = min(min_col, int(current_location[1]))
+			max_col = max(max_col, int(current_location[1]))
+
+			flat_sequence = append(flat_sequence, current_location...)
+		}
+	}
+
+	seq := geom.NewSequence(flat_sequence, geom.DimXY)
+
+	var polygon_lines []geom.LineString
+	polygon_lines = append(polygon_lines, geom.NewLineString(seq))
+
+	polygon := geom.NewPolygon(polygon_lines)
+
+	boundary_points := countBoundaryLatticePoints(seq)
+
+	interior := int(polygon.Area()) - (boundary_points / 2) + 1
+
+	fmt.Println(interior)
+	fmt.Println(boundary_points)
+
+	return interior + boundary_points
 }
 
 func main() {
