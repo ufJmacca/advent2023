@@ -82,6 +82,27 @@ func Puzzle1(input string) int {
 	return cnt + int(polygon.Boundary().Length())
 }
 
+func InstructionDecode(hexa string) (string, int) {
+	steps, _ := strconv.ParseInt(hexa[1:6], 16, 64)
+	var direction string
+	switch hexa[6:] {
+	case "0":
+		direction = "R"
+	case "1":
+		direction = "D"
+	case "2":
+		direction = "L"
+	case "3":
+		direction = "U"
+	}
+	return direction, int(steps)
+}
+
+func Puzzle2(input string) int {
+
+	return 0
+}
+
 func main() {
 	c := colly.NewCollector()
 
