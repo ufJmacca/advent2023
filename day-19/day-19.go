@@ -83,6 +83,11 @@ func Puzzle1(input string) int {
 	return total
 }
 
+func Puzzle2(input string) int {
+
+	return 0
+}
+
 func main() {
 	c := colly.NewCollector()
 
