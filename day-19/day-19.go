@@ -1,6 +1,8 @@
 package main
 
 import (
+	"regexp"
+	"strconv"
 	"strings"
 
 	"github.com/PaesslerAG/gval"
@@ -47,6 +49,33 @@ func PartEvaluation(part map[string]int, workflow []string, workflows map[string
 }
 
 func Puzzle1(input string) int {
+	blocks := strings.Split(input, "\n\n")
 
-	return 0
+	flows_regex := regexp.MustCompile(`(\w+){(.*?)}`)
+	parts_regex := regexp.MustCompile(`(\w+)=(\d+)`)
+
+	flows := make(map[string][]string)
+	part := make(map[string]int)
+
+	for _, line := range strings.Split(blocks[0], "\n") {
+		if len(line) > 0 {
+			matches := flows_regex.FindAllStringSubmatch(line, -1)
+			flows[matches[0][1]] = append(flows[matches[0][1]], strings.Split(matches[0][2], ",")...)
+		}
+	}
+
+	total := 0
+
+	for _, line := range strings.Split(blocks[1], "\n") {
+		if len(line) > 0 {
+			matches := parts_regex.FindAllStringSubmatch(line, -1)
+			for i := range matches {
+				part_value, _ := strconv.Atoi(string(matches[i][2]))
+				part[string(matches[i][1])] = part_value
+			}
+			total += PartEvaluation(part, []string{}, flows)
+		}
+	}
+
+	return total
 }
