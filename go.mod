@@ -4,6 +4,7 @@ go 1.21.1
 
 require (
 	github.com/Jcowwell/go-algorithm-club v0.0.0-20220301144310-f6cfca9526c5 // indirect
+	github.com/PaesslerAG/gval v1.2.2 // indirect
 	github.com/PuerkitoBio/goquery v1.8.1 // indirect
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/antchfx/htmlquery v1.3.0 // indirect
@@ -18,6 +19,7 @@ require (
 	github.com/peterstace/simplefeatures v0.46.0 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/saintfish/chardet v0.0.0-20230101081208-5e3ef4b5456d // indirect
+	github.com/shopspring/decimal v1.3.1 // indirect
 	github.com/spatialcurrent/go-math v0.0.0-20211120210754-b3872f7000fe // indirect
 	github.com/temoto/robotstxt v1.1.2 // indirect
 	github.com/twpayne/go-geom v1.5.3 // indirect
