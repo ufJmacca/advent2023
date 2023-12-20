@@ -1,11 +1,14 @@
 package main
 
 import (
+	"fmt"
+	"os"
 	"regexp"
 	"strconv"
 	"strings"
 
 	"github.com/PaesslerAG/gval"
+	"github.com/gocolly/colly"
 )
 
 func PartEvaluation(part map[string]int, workflow []string, workflows map[string][]string) int {
@@ -78,4 +81,25 @@ func Puzzle1(input string) int {
 	}
 
 	return total
+}
+
+func main() {
+	c := colly.NewCollector()
+
+	// Sets cookie from environment variable
+	c.OnRequest(func(r *colly.Request) {
+		r.Headers.Set("cookie", os.Getenv("COOKIE"))
+	})
+
+	c.OnResponse(func(r *colly.Response) {
+		inputs := string(r.Body)
+
+		puzzle_1 := Puzzle1(inputs)
+		fmt.Println(puzzle_1)
+
+		// puzzle_2 := Puzzle2(inputs)
+		// fmt.Println(puzzle_2)
+	})
+
+	c.Visit("https://adventofcode.com/2023/day/19/input")
 }
