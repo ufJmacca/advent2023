@@ -192,8 +192,8 @@ func main() {
 		puzzle_1 := Puzzle1(inputs)
 		fmt.Println(puzzle_1)
 
-		// puzzle_2 := Puzzle2(inputs)
-		// fmt.Println(puzzle_2)
+		puzzle_2 := Puzzle2(inputs)
+		fmt.Println(puzzle_2)
 	})
 
 	c.Visit("https://adventofcode.com/2023/day/19/input")
