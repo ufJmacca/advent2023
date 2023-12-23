@@ -13,7 +13,13 @@ func TestPuzzle1(t *testing.T) {
 %a -> b
 %b -> c
 %c -> inv
-&inv -> a`, 32000000},
+&inv -> a
+`, 32000000}, {`broadcaster -> a
+%a -> inv, con
+&inv -> b
+%b -> con
+&con -> output
+`, 11687500},
 	}
 
 	for _, datum := range test_data {
