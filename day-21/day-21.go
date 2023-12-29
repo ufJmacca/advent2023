@@ -1,5 +1,7 @@
 package main
 
+import "strings"
+
 type queue_item struct {
 	cell            [2]int
 	steps_remaining int
@@ -68,6 +70,20 @@ func Function(grid [][]string, start [2]int, steps int) int {
 }
 
 func Puzzle1(input string, steps int) int {
+	var grid [][]string
+	var start [2]int
+	lines := strings.Split(input, "\n")
+	for row, line := range lines {
+		if len(line) > 0 {
+			elements := strings.Split(line, "")
+			grid = append(grid, elements)
+			for col, value := range elements {
+				if value == "S" {
+					start = [2]int{row, col}
+				}
+			}
+		}
+	}
 
-	return 0
+	return Function(grid, start, steps)
 }
