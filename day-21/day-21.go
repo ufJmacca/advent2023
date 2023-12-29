@@ -34,6 +34,14 @@ func (q *queue) Dequeue() queue_item {
 	return item
 }
 
+func modulo(a, b int) int {
+	result := a % b
+	if result < 0 && b > 0 {
+		result += b
+	}
+	return result
+}
+
 func Function(grid [][]string, start [2]int, steps int) int {
 	rows := len(grid)
 	cols := len(grid[0])
@@ -61,7 +69,7 @@ func Function(grid [][]string, start [2]int, steps int) int {
 			next_x, next_y := element.cell[0]+direction[0], element.cell[1]+direction[1]
 			_, already_seen := seen[[2]int{next_x, next_y}]
 
-			if next_x >= 0 && next_x < rows && next_y >= 0 && next_y < cols && grid[next_x][next_y] != "#" && !already_seen {
+			if grid[modulo(next_x, rows)][modulo(next_y, cols)] != "#" && !already_seen {
 				seen[[2]int{next_x, next_y}] = 1
 				p_queue.Enqueue(queue_item{
 					cell:            [2]int{next_x, next_y},
