@@ -1,6 +1,12 @@
 package main
 
-import "strings"
+import (
+	"fmt"
+	"os"
+	"strings"
+
+	"github.com/gocolly/colly"
+)
 
 type queue_item struct {
 	cell            [2]int
@@ -86,4 +92,25 @@ func Puzzle1(input string, steps int) int {
 	}
 
 	return Function(grid, start, steps)
+}
+
+func main() {
+	c := colly.NewCollector()
+
+	// Sets cookie from environment variable
+	c.OnRequest(func(r *colly.Request) {
+		r.Headers.Set("cookie", os.Getenv("COOKIE"))
+	})
+
+	c.OnResponse(func(r *colly.Response) {
+		inputs := string(r.Body)
+
+		puzzle_1 := Puzzle1(inputs, 64)
+		fmt.Println(puzzle_1)
+
+		// puzzle_2 := Puzzle2(inputs, 1000000)
+		// fmt.Println(puzzle_2)
+	})
+
+	c.Visit("https://adventofcode.com/2023/day/21/input")
 }
